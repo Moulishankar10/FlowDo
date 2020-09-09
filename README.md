@@ -4,7 +4,7 @@ FlowDo is a application created for the purpose of managing business activities 
 
 ### Developed by:
 
-Vigneshwar K R (@vicky2k01), Moulishankar M R (@Moulishankar10), Vishal Balaji Sivaraman (@The-SocialLion)
+Vigneshwar K R (@ToastCoder), Moulishankar M R (@Moulishankar10), Vishal Balaji Sivaraman (@The-SocialLion)
 
 
 ## License:
