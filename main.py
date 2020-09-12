@@ -59,3 +59,5 @@ if __name__ == "__main__":
         elif option == 3:
             Inventory()
             continue
+        elif option == 9:
+            break
