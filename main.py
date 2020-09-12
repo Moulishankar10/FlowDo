@@ -19,7 +19,7 @@ def orderOptionsVisualizer():
 def Order():
     orderOptionsVisualizer()
     while(True):
-        opt = int(input("Enter your option: "))
+        opt = int(input("Enter your option : "))
         if opt == 0:
             orderOptionsVisualiser()
             continue
@@ -46,7 +46,7 @@ if __name__ == "__main__":
     inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     mainOptionsVisualizer()
     while(1):
-        option = int(input("Enter an option:"))
+        option = int(input("Enter your option :"))
         if option == 0:
             mainOptionsVisualizer()
             break
