@@ -49,13 +49,13 @@ if __name__ == "__main__":
         option = int(input("Enter your option :"))
         if option == 0:
             mainOptionsVisualizer()
-            break
+            continue
         elif option == 1:
             Order()
-            break
+            continue
         elif option == 2:
             Revenue()
-            break
+            continue
         elif option == 3:
             Inventory()
-            break
+            continue
