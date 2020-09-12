@@ -1,13 +1,16 @@
 import pandas as pd
 
 def mainOptionsVisualizer():
+    print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
     print("Press 1 for Adding a new order")
     print("Press 2 for viewing your revenue for this month.")
     print("Press 3 for viewing your inventory.")
     print("Press 9 for exit.")
+    print("\n**********************************************************************************************")
     
 def orderOptionsVisualizer():
+    print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
     print("Press 1 for Adding new product.")
     print("Press 2 for Removing a product.")
@@ -15,6 +18,7 @@ def orderOptionsVisualizer():
     print("Press 4 to modify your order.")
     print("Press 5 to proceed your order.")
     print("Press 9 for exit.")
+    print("\n**********************************************************************************************")
     
 def Order():
     orderOptionsVisualizer()
