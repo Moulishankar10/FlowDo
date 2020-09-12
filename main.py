@@ -7,6 +7,21 @@ def mainOptionsVisualizer():
     print("Press 3 for viewing your inventory.")
     print("Press 9 for exit.")
     
+def orderOptionsVisualizer():
+    print("Press 0 for viewing options again.")
+    print("Press 1 for Adding new product.")
+    print("Press 2 for Removing a product.")
+    print("Press 3 for viewing the bill.")
+    print("Press 4 to modify your order.")
+    print("Press 5 to proceed your order.")
+    print("Press 9 for exit.")
+    
+def Order():
+    orderOptionsVisualizer()
+    while(True):
+        opt = int(input())
+        
+    
     
 #def dataImporter():
 #    inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
@@ -31,11 +46,11 @@ if __name__ == "__main__":
             mainOptionsVisualizer()
             break
         elif option == 1:
-            newOrder(prod_name)
+            Order()
             break
         elif option == 2:
-            Revenue(revenue)
+            Revenue()
             break
         elif option == 3:
-            Inventory(inv_table)
+            Inventory()
             break
