@@ -27,7 +27,9 @@ def revenueOptionsVisualizer():
     print("Press 2 for viewing the product which generated the most profit.")
     print("Press 3 for viewing the product which generated the least profit.")
     print("Press 4 for viewing the revenue graph.")
-    print("Press 9 for exit.")
+    print("Press 9 for exit.")  
+    print("\n**********************************************************************************************")
+    
 def Order():
     orderOptionsVisualizer()
     while True:
