@@ -7,7 +7,10 @@
 # REQUIRED MODULES
 import pandas as pd
 
+# VISUALIZER FUNCTIONS:
+# Used to display keymaps for main menu and every submenu
 
+# LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
