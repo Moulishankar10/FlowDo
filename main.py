@@ -33,6 +33,8 @@ def revenueOptionsVisualizer():
 def inventoryOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
+    print("Press 9 for exit.")  
+    print("\n**********************************************************************************************")
     
 def Order():
     orderOptionsVisualizer()
