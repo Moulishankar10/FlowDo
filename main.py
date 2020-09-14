@@ -15,8 +15,8 @@ def mainOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
     print("Press 1 for Adding a new order")
-    print("Press 2 for viewing your revenue for this month.")
-    print("Press 3 for viewing your inventory.")
+    print("Press 2 for displaying revenue options.")
+    print("Press 3 for displaying inventory options.")
     print("Press 9 for exit.")
     print("\n**********************************************************************************************")
     
