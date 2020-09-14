@@ -19,7 +19,8 @@ def mainOptionsVisualizer():
     print("Press 3 for displaying inventory options.")
     print("Press 9 for exit.")
     print("\n**********************************************************************************************")
-    
+
+# LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
