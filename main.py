@@ -31,7 +31,8 @@ def orderOptionsVisualizer():
     print("Press 5 to proceed your order.")
     print("Press 9 for exit.")
     print("\n**********************************************************************************************")
-    
+
+# LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
@@ -41,7 +42,8 @@ def revenueOptionsVisualizer():
     print("Press 4 for viewing the revenue graph.")
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
-    
+
+# LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing options again.")
