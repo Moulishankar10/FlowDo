@@ -53,7 +53,8 @@ def inventoryOptionsVisualizer():
     print("Press 4 to modify the properties of existing products.")
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
-    
+
+# Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
     orderOptionsVisualizer()
     while True:
@@ -77,7 +78,7 @@ def Order():
 #    max_stock = inventory.Maximum_Stock
 #    return inv_table,prod_code,prod_name,avail_stock,max_stock,revenue
 
-
+# MAIN FUNCTION
 if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
     print(" Here is the list of options available to you...")
