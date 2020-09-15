@@ -78,6 +78,40 @@ def Order():
 #    max_stock = inventory.Maximum_Stock
 #    return inv_table,prod_code,prod_name,avail_stock,max_stock,revenue
 
+
+class Queue:
+    def __init__(self,l):
+        self.queue=[]
+        self.limit=l
+        self.front=None
+        self.rear=None
+    def isFull(self):
+        if self.rear==self.limit-1:
+            return True
+        else:
+            return False
+    def isEmpty(self):
+        if self.front==None:
+            return True
+        else:
+            return False
+    def enqueue(self,ele):
+        if self.isFull():
+            print("Maximum limit reached")
+        else:
+            if self.front==None and self.rear==None:
+                self.front=self.rear=0
+            else:
+                self.rear=self.rear+1
+        self.queue.append(ele)
+    def dequeue(self):
+        if self.isEmpty():
+            print("No more elements")
+        else:
+            return(self.queue.pop(0))
+        
+        
+
 # MAIN FUNCTION
 if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
