@@ -13,18 +13,18 @@ import pandas as pd
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
     print("**********************************************************************************************\n")
-    print("Press 0 for viewing options again.")
+    print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new order")
-    print("Press 2 for displaying revenue options.")
-    print("Press 3 for displaying inventory options.")
+    print("Press 2 for displaying the revenue options.")
+    print("Press 3 for displaying the inventory options.")
     print("Press 9 for exit.")
     print("\n**********************************************************************************************")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
     print("**********************************************************************************************\n")
-    print("Press 0 for viewing options again.")
-    print("Press 1 for Adding new product.")
+    print("Press 0 for viewing the options again.")
+    print("Press 1 for Adding a new product.")
     print("Press 2 for Removing a product.")
     print("Press 3 for viewing the bill.")
     print("Press 4 to modify your order.")
@@ -35,7 +35,7 @@ def orderOptionsVisualizer():
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
     print("**********************************************************************************************\n")
-    print("Press 0 for viewing options again.")
+    print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
     print("Press 2 for viewing the product which generated the most profit.")
     print("Press 3 for viewing the product which generated the least profit.")
@@ -46,10 +46,10 @@ def revenueOptionsVisualizer():
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
     print("**********************************************************************************************\n")
-    print("Press 0 for viewing options again.")
+    print("Press 0 for viewing the options again.")
     print("Press 1 for viewing your inventory.")
-    print("Press 2 for adding a new product to your inventory.")
-    print("Press 3 for removing a product from your inventory.")
+    print("Press 2 for Adding a new product to your inventory.")
+    print("Press 3 for Removing a product from your inventory.")
     print("Press 4 to modify the properties of existing products.")
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
