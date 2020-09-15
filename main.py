@@ -50,6 +50,7 @@ def inventoryOptionsVisualizer():
     print("Press 1 for viewing your inventory.")
     print("Press 2 for adding a new product to your inventory.")
     print("Press 3 for removing a product from your inventory.")
+    print("Press 4 to modify the properties of existing products.")
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
     
