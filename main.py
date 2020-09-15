@@ -2,7 +2,8 @@
 
 # FlowDo is a application created for the purpose of managing business activities like Inventory Maintenance, Billing, Sales analysis and other business functions.
 
-# Developed by: Moulishankar M R (@Moulishankar10) , Vigneshwar K R (@ToastCoder)
+# Developed by: Moulishankar M R (@Moulishankar10) , Vigneshwar K R (@ToastCoder), Vishal Balaji Sivaraman (@The-SocialLion)
+# Development Status: Under development
 
 # REQUIRED MODULES
 import pandas as pd
@@ -54,17 +55,31 @@ def inventoryOptionsVisualizer():
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
 
+
+    
+# FUNCTIONS FOR THE SUB MENU
+
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
     orderOptionsVisualizer()
     while True:
-        opt = int(input("Enter your option : "))
-        if opt == 0:
+        order_option = int(input("Enter your option : "))
+        if order_option == 0:
             orderOptionsVisualiser()
-            continue
+        elif order_option == 1:
+            #enqueue
+        elif order_option == 2:
+            #dequeue
+        elif order_option == 3:
         elif opt == 9:
             break
-        
+def revenue():
+    # SUB FUNCTIONS SHOULD BE ADDED
+    return None
+
+def inventory():
+    # SUB FUNCTIONS SHOULD BE ADDED
+    return None
     
     
 #def dataImporter():
@@ -114,7 +129,7 @@ class Queue:
 if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
     print(" Here is the list of options available to you...")
-    inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
+    #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     mainOptionsVisualizer()
     while 1:
         option = int(input("Enter your option :"))
