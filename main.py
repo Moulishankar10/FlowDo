@@ -85,28 +85,26 @@ class Queue:
         self.limit=l
         self.front=None
         self.rear=None
+        
     def isFull(self):
-        if self.rear==self.limit-1:
-            return True
-        else:
-            return False
+        return self.rear==self.limit-1:
+            
     def isEmpty(self):
-        if self.front==None:
-            return True
-        else:
-            return False
+        return self.front==None:
+            
     def enqueue(self,ele):
         if self.isFull():
-            print("Maximum limit reached")
+            print("Maximum limit reached!")
         else:
             if self.front==None and self.rear==None:
                 self.front=self.rear=0
             else:
                 self.rear=self.rear+1
         self.queue.append(ele)
+        
     def dequeue(self):
         if self.isEmpty():
-            print("No more elements")
+            print("Sorry! It's an empty list.)
         else:
             return(self.queue.pop(0))
         
