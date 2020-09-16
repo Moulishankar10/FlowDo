@@ -80,6 +80,8 @@ def Revenue():
     revenueOptionsVisualizer()
     while True:
         rev_opt = int(input("Enter your option : "))
+        if rev_opt == 0:
+            revenueOptionsVisualizer()
         
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
