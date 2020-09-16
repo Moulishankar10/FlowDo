@@ -73,6 +73,8 @@ def Order():
         elif order_option == 3:
         elif opt == 9:
             break
+            
+# Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def revenue():
     # SUB FUNCTIONS SHOULD BE ADDED
     return None
