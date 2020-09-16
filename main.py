@@ -75,12 +75,12 @@ def Order():
             break
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
-def revenue():
+def Revenue():
     # SUB FUNCTIONS SHOULD BE ADDED
     return None
 
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
-def inventory():
+def Inventory():
     # SUB FUNCTIONS SHOULD BE ADDED
     return None
     
