@@ -34,7 +34,7 @@ def orderOptionsVisualizer():
     print("\n**********************************************************************************************")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
-def revenueOptionsVisualizer():
+def x:
     print("**********************************************************************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
@@ -77,12 +77,17 @@ def Order():
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def Revenue():
     # SUB FUNCTIONS SHOULD BE ADDED
-    return None
-
+    revenueOptionsVisualizer()
+    while True:
+        rev_opt = int(input("Enter your option : "))
+        
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
     # SUB FUNCTIONS SHOULD BE ADDED
-    return None
+    inventoryOptionsVisualizer()
+    while True:
+        inv_opt = int(input("Enter your option : "))
+        
     
     
 #def dataImporter():
