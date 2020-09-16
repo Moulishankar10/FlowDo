@@ -147,7 +147,7 @@ if __name__ == "__main__":
     print(" Here is the list of options available to you...")
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     mainOptionsVisualizer()
-    while 1:
+    while True:
         option = int(input("Enter your option :"))
         if option == 0:
             mainOptionsVisualizer()
