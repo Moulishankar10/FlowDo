@@ -92,10 +92,12 @@ def Inventory():
     inventoryOptionsVisualizer()
     while True:
         inv_opt = int(input("Enter your option : "))
-        if inv_opt = 0:
+        if inv_opt == 0:
             inventoryOptionsVisualizer()
-    
-    
+            continue
+        elif inv_opt == 9:
+            break
+            
 #def dataImporter():
 #    inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
 #    revenue = pd.DataFrame(pd.read_csv('data/revenue.csv'))
