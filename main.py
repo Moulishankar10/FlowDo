@@ -34,7 +34,7 @@ def orderOptionsVisualizer():
     print("\n**********************************************************************************************")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
-def x:
+def revenueOptionsVisualizer():
     print("**********************************************************************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
@@ -89,7 +89,8 @@ def Inventory():
     inventoryOptionsVisualizer()
     while True:
         inv_opt = int(input("Enter your option : "))
-        
+        if inv_opt = 0:
+            inventoryOptionsVisualizer()
     
     
 #def dataImporter():
