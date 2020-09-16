@@ -82,6 +82,9 @@ def Revenue():
         rev_opt = int(input("Enter your option : "))
         if rev_opt == 0:
             revenueOptionsVisualizer()
+            continue
+        elif rev_opt == 9:
+            break
         
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
