@@ -147,7 +147,7 @@ if __name__ == "__main__":
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     mainOptionsVisualizer()
     while True:
-        option = int(input("Enter your option :"))
+        option = int(input("Enter your option : "))
         if option == 0:
             mainOptionsVisualizer()
         elif option == 1:
