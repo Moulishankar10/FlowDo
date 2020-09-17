@@ -152,7 +152,6 @@ if __name__ == "__main__":
             mainOptionsVisualizer()
         elif option == 1:
             Order()
-            continue
         elif option == 2:
             Revenue()
             continue
