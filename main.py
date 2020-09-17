@@ -150,7 +150,6 @@ if __name__ == "__main__":
         option = int(input("Enter your option :"))
         if option == 0:
             mainOptionsVisualizer()
-            continue
         elif option == 1:
             Order()
             continue
