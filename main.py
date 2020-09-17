@@ -154,9 +154,7 @@ if __name__ == "__main__":
             Order()
         elif option == 2:
             Revenue()
-            continue
         elif option == 3:
             Inventory()
-            continue
         elif option == 9:
             break
