@@ -94,7 +94,6 @@ def Inventory():
         inv_opt = int(input("Enter your option : "))
         if inv_opt == 0:
             inventoryOptionsVisualizer()
-            continue
         elif inv_opt == 9:
             break
             
