@@ -55,8 +55,8 @@ def inventoryOptionsVisualizer():
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
 
-# QUEUE CLASS FOR BILLING OPERATIONS
-class Queue:
+# CLASS FOR BILLING OPERATIONS
+class Biller:
     def __init__(self,l):
         self.prod_name=[]
         self.quantity=[]
@@ -102,7 +102,7 @@ class Queue:
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
     l = int(input("Enter the number of products:"))
-    q = Queue(l)
+    b = Biller(l)
     orderOptionsVisualizer()
     while True:
         order_option = int(input("Enter your option : "))
@@ -112,14 +112,14 @@ def Order():
         elif order_option == 1:
             ele = input("Enter the product name:")
             qn = int(input("Enter the quantity:"))
-            q.enqueue(ele,qn)
+            b.enqueue(ele,qn)
             
         elif order_option == 2:
             ele = input("Enter the product name:")
-            q.remove(ele)
+            b.remove(ele)
             
         elif order_option == 3:
-            q.display()
+            b.display()
             
         elif order_option == 9:
             break
