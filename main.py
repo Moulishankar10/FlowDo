@@ -55,23 +55,73 @@ def inventoryOptionsVisualizer():
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************")
 
+# QUEUE CLASS FOR BILLING OPERATIONS
+class Queue:
+    def __init__(self,l):
+        self.prod_name=[]
+        self.quantity=[]
+        self.limit=l
+        self.front=None
+        self.rear=None
+        
+    def isFull(self):
+        return self.rear==self.limit-1
+            
+    def isEmpty(self):
+        return self.front==None
+            
+    def enqueue(self,ele,qn):
+        if self.isFull():
+            print("Maximum limit reached!")
+        else:
+            if self.front==None and self.rear==None:
+                self.front=self.rear=0
+            else:
+                self.rear=self.rear+1
 
+        self.prod_name.append(ele)
+        self.quantity.append(qn)
+
+    def remove(self,ele):
+        if self.isEmpty():
+            print("Sorry! It is an empty bill.")
+        else:
+            ind = self.prod_name.index(ele)
+            del self.prod_name[ind]
+            del self.quantity[ind]
+    
+    def display(self):
+        if self.isEmpty():
+            print("Sorry! It is an empty bill.")
+        else:
+            res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
+            print(res)
     
 # FUNCTIONS FOR THE SUB MENU
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
+    l = int(input("Enter the number of products:"))
+    q = Queue(l)
     orderOptionsVisualizer()
     while True:
         order_option = int(input("Enter your option : "))
         if order_option == 0:
-            orderOptionsVisualiser()
+            orderOptionsVisualizer()
+
         elif order_option == 1:
-            #enqueue
+            ele = input("Enter the product name:")
+            qn = int(input("Enter the quantity:"))
+            q.enqueue(ele,qn)
+            
         elif order_option == 2:
-            #dequeue
+            ele = input("Enter the product name:")
+            q.remove(ele)
+            
         elif order_option == 3:
-        elif opt == 9:
+            q.display()
+            
+        elif order_option == 9:
             break
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
@@ -94,6 +144,7 @@ def Inventory():
         inv_opt = int(input("Enter your option : "))
         if inv_opt == 0:
             inventoryOptionsVisualizer()
+            continue
         elif inv_opt == 9:
             break
             
@@ -109,34 +160,7 @@ def Inventory():
 #    return inv_table,prod_code,prod_name,avail_stock,max_stock,revenue
 
 
-class Queue:
-    def __init__(self,l):
-        self.queue=[]
-        self.limit=l
-        self.front=None
-        self.rear=None
-        
-    def isFull(self):
-        return self.rear==self.limit-1:
-            
-    def isEmpty(self):
-        return self.front==None:
-            
-    def enqueue(self,ele):
-        if self.isFull():
-            print("Maximum limit reached!")
-        else:
-            if self.front==None and self.rear==None:
-                self.front=self.rear=0
-            else:
-                self.rear=self.rear+1
-        self.queue.append(ele)
-        
-    def dequeue(self):
-        if self.isEmpty():
-            print("Sorry! It's an empty list.)
-        else:
-            return(self.queue.pop(0))
+
         
         
 
@@ -147,14 +171,18 @@ if __name__ == "__main__":
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     mainOptionsVisualizer()
     while True:
-        option = int(input("Enter your option : "))
+        option = int(input("Enter your option :"))
         if option == 0:
             mainOptionsVisualizer()
+            
         elif option == 1:
             Order()
+            
         elif option == 2:
             Revenue()
+            
         elif option == 3:
             Inventory()
+            
         elif option == 9:
             break
