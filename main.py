@@ -96,6 +96,7 @@ class Biller:
         else:
             res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
             print(res)
+
     def modify(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -106,7 +107,8 @@ class Biller:
                 self.prod_name[ind] = input()
             elif key == 1:
                 self.quantity[ind] = int(input())
-
+    def postProcessor(self):
+        return None
 # FUNCTIONS FOR THE SUB MENU
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
@@ -134,7 +136,15 @@ def Order():
         elif order_option == 4:
             ele = input("Enter the product name:")
             b.modify(ele)
-            
+        
+        elif order_option == 5:
+            print("Here's your final bill")
+            b.display()
+            key = int(input("Do you want to make any changes?(Y/N)"))
+            if key == "Y" or "y":
+                pass
+            elif key == "N" or "n":
+                b.postProcessor()
         elif order_option == 9:
             break
             
