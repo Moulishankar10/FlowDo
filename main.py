@@ -108,6 +108,7 @@ class Biller:
             elif key == 1:
                 self.quantity[ind] = int(input())
     def postProcessor(self):
+        inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
         return None
 # FUNCTIONS FOR THE SUB MENU
 
