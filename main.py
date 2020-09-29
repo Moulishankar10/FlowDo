@@ -110,6 +110,16 @@ class Biller:
     def postProcessor(self):
         inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
         return None
+
+#INDIVIDUAL FUNCTIONS USED IN REVENU SUB MENU
+def viewMonthRevenue():
+    pass
+def maxProfit():
+    pass
+def minProfit():
+    pass
+def viewRevenueGraph():
+    pass
 # FUNCTIONS FOR THE SUB MENU
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
