@@ -111,7 +111,7 @@ class Biller:
         inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
         return None
 
-#INDIVIDUAL FUNCTIONS USED IN REVENU SUB MENU
+#INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 def viewMonthRevenue():
     pass
 def maxProfit():
@@ -120,6 +120,17 @@ def minProfit():
     pass
 def viewRevenueGraph():
     pass
+
+#INDIVIDUAL FUNCTIONS USED IN INVENTORY SUB MENU
+def viewInventory():
+    pass
+def addProdInventory():
+    pass
+def removeProdInventory():
+    pass
+def modifyProduct():
+    pass
+
 # FUNCTIONS FOR THE SUB MENU
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
