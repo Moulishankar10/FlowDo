@@ -188,8 +188,8 @@ def Revenue():
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
     # SUB FUNCTIONS SHOULD BE ADDED
-    inventoryOptionsVisualizer()
     while True:
+        inventoryOptionsVisualizer()
         inv_opt = int(input("Enter your option : "))
         if inv_opt == 0:
             inventoryOptionsVisualizer()
