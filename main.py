@@ -12,17 +12,17 @@ import pandas as pd
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
-    print("*************************************** MAIN MENU ********************************************\n")
+    print("\n*************************************** MAIN MENU ********************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new order")
     print("Press 2 for displaying the revenue options.")
     print("Press 3 for displaying the inventory options.")
     print("Press 9 for exit.")
-    print("\n**********************************************************************************************")
+    print("\n**********************************************************************************************\n")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
-    print("**********************************************************************************************\n")
+    print("\n**********************************************************************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new product.")
     print("Press 2 for Removing a product.")
@@ -30,29 +30,29 @@ def orderOptionsVisualizer():
     print("Press 4 to modify your order.")
     print("Press 5 to proceed your order.")
     print("Press 9 for exit.")
-    print("\n**********************************************************************************************")
+    print("\n**********************************************************************************************\n")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
-    print("**********************************************************************************************\n")
+    print("\n**********************************************************************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
     print("Press 2 for viewing the product which generated the most profit.")
     print("Press 3 for viewing the product which generated the least profit.")
     print("Press 4 for viewing the revenue graph.")
     print("Press 9 for exit.")  
-    print("\n**********************************************************************************************")
+    print("\n**********************************************************************************************\n")
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
-    print("**********************************************************************************************\n")
+    print("\n**********************************************************************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing your inventory.")
     print("Press 2 for Adding a new product to your inventory.")
     print("Press 3 for Removing a product from your inventory.")
     print("Press 4 to modify the properties of existing products.")
     print("Press 9 for exit.")  
-    print("\n**********************************************************************************************")
+    print("\n**********************************************************************************************\n")
 
 # CLASS FOR BILLING OPERATIONS
 class Biller:
