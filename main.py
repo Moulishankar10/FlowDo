@@ -76,7 +76,7 @@ class Biller:
             if self.front==None and self.rear==None:
                 self.front=self.rear=0
             else:
-                self.rear=self.rear+1
+                self.rear += 1
 
         self.prod_name.append(ele)
         self.quantity.append(qn)
@@ -88,6 +88,7 @@ class Biller:
             ind = self.prod_name.index(ele)
             del self.prod_name[ind]
             del self.quantity[ind]
+            self.rear -= 1
     
     def display(self):
         if self.isEmpty():
