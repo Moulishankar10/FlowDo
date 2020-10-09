@@ -103,7 +103,7 @@ class Biller:
             print("Sorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele)
-            key = int(input("\nPress 0 for modifying the product name \n Press 1 for modifying the quantity:"))
+            key = int(input("\nPress 0 for modifying the product name ..... \n Press 1 for modifying the quantity .....\n"))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
             elif key == 1:
@@ -146,19 +146,19 @@ def Order():
             orderOptionsVisualizer()
 
         elif order_option == 1:
-            ele = input("Enter the product name:")
+            ele = input("Enter the product name : ")
             qn = int(input("Enter the quantity:"))
             b.enqueue(ele,qn)
             
         elif order_option == 2:
-            ele = input("Enter the product name:")
+            ele = input("Enter the product name : ")
             b.remove(ele)
             
         elif order_option == 3:
             b.display()
         
         elif order_option == 4:
-            ele = input("Enter the product name:")
+            ele = input("Enter the product name : ")
             b.modify(ele)
         
         elif order_option == 5:
