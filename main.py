@@ -107,7 +107,7 @@ class Biller:
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
             elif key == 1:
-                self.quantity[ind] = int(input())
+                self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
         inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
         return None
