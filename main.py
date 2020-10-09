@@ -12,7 +12,7 @@ import pandas as pd
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
-    print("**********************************************************************************************\n")
+    print("*************************************** MAIN MENU ********************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new order")
     print("Press 2 for displaying the revenue options.")
@@ -94,17 +94,18 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
+            print("\n------- BILL -------")
             res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
-            print(res)
+            print(res,"\n")
 
     def modify(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele)
-            key = int(input("Press 0 for modifying the product name or Press 1 for modifying the quantity:"))
+            key = int(input("\nPress 0 for modifying the product name \n Press 1 for modifying the quantity:"))
             if key == 0:
-                self.prod_name[ind] = input()
+                self.prod_name[ind] = input("\nEnter the new product name : ")
             elif key == 1:
                 self.quantity[ind] = int(input())
     def postProcessor(self):
@@ -137,8 +138,9 @@ def modifyProduct():
 def Order():
     l = int(input("Enter the number of products:"))
     b = Biller(l)
-    orderOptionsVisualizer()
+    
     while True:
+        orderOptionsVisualizer()
         order_option = int(input("Enter your option : "))
         if order_option == 0:
             orderOptionsVisualizer()
