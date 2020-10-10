@@ -111,11 +111,16 @@ class Biller:
     def postProcessor(self):
         r = csv.reader(open('data/inventory.csv'))
         inventory = list(r)
-        print(inventory)
-        for i in range(len(inventory)):
+        print(len(inventory))
+        for i in range(len(inventory)-1):
             for j in range(len(self.prod_name)):
-                if inventory[i][2] == self.prod_name[j].lower():
-                    inventory[i][3] = inventory[i][3]-self.quantity[j]
+                if inventory[i][2] == self.prod_name[j]:
+                    print("inventory[i][2]= ",inventory[i][2])
+                    print("inventory[i][3] before = ",inventory[i][3])
+                    inventory[i][3] = int(inventory[i][3])-self.quantity[j]
+                    print("inventory[i][3] after = ",inventory[i][3])
+                    print("self.quantity[j]= ",self.quantity[j])
+                    
         writer = csv.writer(open('data/inventory.csv', 'w'))
         writer.writerows(inventory)
         print("Inventory Updated ! ")
