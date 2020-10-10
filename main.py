@@ -6,7 +6,7 @@
 
 # REQUIRED MODULES
 import pandas as pd
-
+import csv
 # VISUALIZER FUNCTIONS:
 # Used to display keymaps for main menu and every submenu
 
@@ -109,8 +109,16 @@ class Biller:
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
-        inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
-        return None
+        r = csv.reader(open('data/inventory.csv'))
+        inventory = list(r)
+        print(inventory)
+        for i in range(len(inventory)):
+            for j in range(len(self.prod_name)):
+                if inventory[i][2] == self.prod_name[j].lower():
+                    inventory[i][3] = inventory[i][3]-self.quantity[j]
+        writer = csv.writer(open('data/inventory.csv', 'w'))
+        writer.writerows(inventory)
+        print("Inventory Updated ! ")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 def viewMonthRevenue():
@@ -164,10 +172,10 @@ def Order():
         elif order_option == 5:
             print("Here's your final bill")
             b.display()
-            key = int(input("Do you want to make any changes?(Y/N)"))
-            if key == "Y" or "y":
+            key = input("Do you want to make any changes?(Y/N)")
+            if key == "Y" or key == "y":
                 pass
-            elif key == "N" or "n":
+            elif key == "N" or key == "n":
                 b.postProcessor()
         elif order_option == 9:
             break
