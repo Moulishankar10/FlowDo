@@ -103,7 +103,7 @@ class Biller:
             print("Sorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele.lower())
-            key = int(input("\nPress 0 for modifying the product name ..... \n Press 1 for modifying the quantity .....\n"))
+            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\n"))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
             elif key == 1:
@@ -112,7 +112,7 @@ class Biller:
         r = csv.reader(open('data/inventory.csv'))
         inventory = list(r)
         print(len(inventory))
-        for i in range(len(inventory)-1):
+        for i in range(0,len(inventory)-1):
             for j in range(len(self.prod_name)):
                 if inventory[i][2] == self.prod_name[j]:
                     print("inventory[i][2]= ",inventory[i][2])
@@ -178,7 +178,7 @@ def Order():
             print("\n------------------Here's your Final Bill---------------\n")
             b.display()
             print("\n-------------------------------------------------------\n")
-            key = input("Do you want to make any changes?(Y/N)")
+            key = input("Do you want to make any changes? (Y/N) : ")
             if key == "Y" or key == "y":
                 pass
             elif key == "N" or key == "n":
