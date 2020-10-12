@@ -78,7 +78,7 @@ class Biller:
             else:
                 self.rear += 1
 
-        self.prod_name.append(ele)
+        self.prod_name.append(ele.lower())
         self.quantity.append(qn)
 
     def remove(self,ele):
@@ -102,7 +102,7 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
-            ind = self.prod_name.index(ele)
+            ind = self.prod_name.index(ele.lower())
             key = int(input("\nPress 0 for modifying the product name ..... \n Press 1 for modifying the quantity .....\n"))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
