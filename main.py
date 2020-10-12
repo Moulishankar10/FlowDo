@@ -149,7 +149,7 @@ def modifyProduct():
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
-    l = int(input("Enter the number of products:"))
+    l = int(input("Enter the number of products :"))
     b = Biller(l)
     
     while True:
@@ -160,7 +160,7 @@ def Order():
 
         elif order_option == 1:
             ele = input("Enter the product name : ")
-            qn = int(input("Enter the quantity:"))
+            qn = int(input("Enter the quantity : "))
             b.enqueue(ele,qn)
             
         elif order_option == 2:
@@ -175,8 +175,9 @@ def Order():
             b.modify(ele)
         
         elif order_option == 5:
-            print("Here's your final bill")
+            print("\n------------------Here's your Final Bill---------------\n")
             b.display()
+            print("\n-------------------------------------------------------\n")
             key = input("Do you want to make any changes?(Y/N)")
             if key == "Y" or key == "y":
                 pass
