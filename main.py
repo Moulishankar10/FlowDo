@@ -94,7 +94,7 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
-            print("\n--------- BILL ---------")
+            print("\n--------- BILL ---------\n")
             res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
             print(res,"\n")
 
@@ -103,7 +103,7 @@ class Biller:
             print("Sorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele.upper())
-            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\n"))
+            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\nYour Option : "))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
             elif key == 1:
@@ -177,7 +177,7 @@ def Order():
         elif order_option == 5:
             print("\n------------------Here's your Final Bill---------------\n")
             b.display()
-            print("\n-------------------------------------------------------\n")
+            print("---------------------------------------------------------\n")
             key = input("Do you want to make any changes? (Y/N) : ")
             if key == "Y" or key == "y":
                 pass
