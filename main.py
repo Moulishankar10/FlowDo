@@ -45,7 +45,7 @@ def revenueOptionsVisualizer():
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
-    print("\n**********************************************************************************************\n")
+    print("\n************************************* INVENTORY MENU *****************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing your inventory.")
     print("Press 2 for Adding a new product to your inventory.")
