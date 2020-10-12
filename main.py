@@ -111,6 +111,7 @@ class Biller:
     def postProcessor(self):
         r = csv.reader(open('data/inventory.csv'))
         inventory = list(r)
+        print(inventory)
         print(len(inventory))
         for i in range(0,len(inventory)-1):
             for j in range(len(self.prod_name)):
