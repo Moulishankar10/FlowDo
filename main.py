@@ -22,7 +22,7 @@ def mainOptionsVisualizer():
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
-    print("\n**********************************************************************************************\n")
+    print("\n************************************* ORDER MENU *********************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new product.")
     print("Press 2 for Removing a product.")
@@ -34,7 +34,7 @@ def orderOptionsVisualizer():
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
-    print("\n**********************************************************************************************\n")
+    print("\n************************************ REVENUE MENU ********************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
     print("Press 2 for viewing the product which generated the most profit.")
