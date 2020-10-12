@@ -78,7 +78,7 @@ class Biller:
             else:
                 self.rear += 1
 
-        self.prod_name.append(ele.lower())
+        self.prod_name.append(ele.upper())
         self.quantity.append(qn)
 
     def remove(self,ele):
@@ -102,7 +102,7 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
-            ind = self.prod_name.index(ele.lower())
+            ind = self.prod_name.index(ele.upper())
             key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\n"))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ")
@@ -149,7 +149,7 @@ def modifyProduct():
 
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
-    l = int(input("Enter the number of products :"))
+    l = int(input("Enter the number of products : "))
     b = Biller(l)
     
     while True:
@@ -234,7 +234,7 @@ if __name__ == "__main__":
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     while True:
         mainOptionsVisualizer()
-        option = int(input("Enter your option :"))
+        option = int(input("Enter your option : "))
         if option == 0:
             mainOptionsVisualizer()
             
