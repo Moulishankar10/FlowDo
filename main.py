@@ -94,7 +94,7 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
-            print("\n------- BILL -------")
+            print("\n--------- BILL ---------")
             res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
             print(res,"\n")
 
