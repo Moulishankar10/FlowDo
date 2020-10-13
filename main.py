@@ -109,22 +109,14 @@ class Biller:
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
-        r = csv.reader(open('data/inventory.csv'))
-        inventory = list(r)
-        print(inventory)
-        print(len(inventory))
-        for i in range(0,len(inventory)-1):
+        inv_data = pd.read_csv('data/inventory.csv')
+
+        for i in range(len(inv_data)):
             for j in range(len(self.prod_name)):
-                if inventory[i][2] == self.prod_name[j]:
-                    print("inventory[i][2]= ",inventory[i][2])
-                    print("inventory[i][3] before = ",inventory[i][3])
-                    inventory[i][3] = int(inventory[i][3])-self.quantity[j]
-                    print("inventory[i][3] after = ",inventory[i][3])
-                    print("self.quantity[j]= ",self.quantity[j])
-                    
-        writer = csv.writer(open('data/inventory.csv', 'w'))
-        writer.writerows(inventory)
-        print("Inventory Updated ! ")
+                if inv_data["Product_Name"][i] == self.prod_name[j]:
+                    inv_data["Available_Stock"][i] == self.quantity[j]
+        inv_data.to_csv('data/inventory.csv')            
+        print("\nInventory Updated ! ")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 def viewMonthRevenue():
