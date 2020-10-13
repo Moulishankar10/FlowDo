@@ -1,3 +1,3 @@
-Serial_No,Product_Code,Product_Name,Available_Stock,Maximum_Stock
-1,0A00,RAM,4,20
-2,0B01,HDD,1,12
+S.No.,Product_Code,Product_Name,Available_Stock,Maximum_Stock
+1,0A00,RAM,8,20
+2,0B01,HDD,6,12
