@@ -118,7 +118,7 @@ class Biller:
         #for k in range(len(inv_data)):
          #   print("Before Updating : \n",inv_data["Available_Stock"][i])
         
-        inv_data.to_csv('data/inventory.csv', header=False, index=False)            
+        inv_data.to_csv('data/inventory.csv', index=False)            
         #for x in range(len(inv_data)):
          #   print("After Updating : \n",inv_data["Available_Stock"][i])
         print("\nInventory Updated ! ")
