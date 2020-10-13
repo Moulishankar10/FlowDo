@@ -114,12 +114,13 @@ class Biller:
         for i in range(len(inv_data)):
             for j in range(len(self.prod_name)):
                 if inv_data["Product_Name"][i] == self.prod_name[j]:
-                    inv_data["Available_Stock"][i] == self.quantity[j]
-        for k in range(len(inv_data)):
-            print("Before Updating : \n",inv_data["Available_Stock"][i])
-        inv_data.to_csv('data/inventory.csv')            
-        for x in range(len(inv_data)):
-            print("After Updating : \n",inv_data["Available_Stock"][i])
+                    inv_data["Available_Stock"][i] -= self.quantity[j]
+        #for k in range(len(inv_data)):
+         #   print("Before Updating : \n",inv_data["Available_Stock"][i])
+        
+        inv_data.to_csv('data/inventory.csv', header=False, index=False)            
+        #for x in range(len(inv_data)):
+         #   print("After Updating : \n",inv_data["Available_Stock"][i])
         print("\nInventory Updated ! ")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
