@@ -92,6 +92,7 @@ class Biller:
                 break
             self.prod_name.append(ele.upper())
             self.quantity.append(qn)
+
     def remove(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
