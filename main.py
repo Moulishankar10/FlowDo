@@ -85,6 +85,7 @@ class Biller:
                     self.quantity.append(qn)
                 else:
                     print("\nSorry for the inconvenience! Your required product is in Out of Stock.")
+                    break
             else:
                 print("\nSorry for the inconvenience! Your required product is not in our Stock.")
     def remove(self,ele):
