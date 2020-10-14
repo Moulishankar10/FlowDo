@@ -83,7 +83,8 @@ class Biller:
                 if qn <= inv_data["Available_Stock"][i]:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
-
+                else:
+                    print("Sorry! Your required product is in Out of Stock.")
     def remove(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
