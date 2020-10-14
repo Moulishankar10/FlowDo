@@ -84,9 +84,9 @@ class Biller:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
                 else:
-                    print("Sorry for the inconvenience! Your required product is in Out of Stock.")
+                    print("\nSorry for the inconvenience! Your required product is in Out of Stock.")
             else:
-                print("Sorry for the inconvenience! Your required product is not in our Stock.")
+                print("\nSorry for the inconvenience! Your required product is not in our Stock.")
     def remove(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
