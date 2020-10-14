@@ -80,7 +80,9 @@ class Biller:
         inv_data = pd.read_csv('data/inventory.csv')
         for i in range(len(inv_data)):
             if inv_data["Product_Name"][i] == ele.upper():
-                self.prod_name.append(ele.upper())
+                if qn <= inv_data["Available_Stock"][i]:
+                    self.prod_name.append(ele.upper())
+
         self.quantity.append(qn)
 
     def remove(self,ele):
