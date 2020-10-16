@@ -59,6 +59,7 @@ class Biller:
     def __init__(self,l):
         self.prod_name=[]
         self.quantity=[]
+        self.price=[]
         self.limit=l
         self.front=None
         self.rear=None
@@ -84,6 +85,7 @@ class Biller:
                 if qn<=inv_data["Available_Stock"][i]:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
+                    self.price.append(inv_data["Selling_Price"][i])
                     break
                 else:
                     flag += 1
