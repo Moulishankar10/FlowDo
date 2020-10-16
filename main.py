@@ -79,11 +79,18 @@ class Biller:
                 self.rear += 1
         inv_data = pd.read_csv('data/inventory.csv')
         for i in range(len(inv_data)):
-            if inv_data["Product_Name"][i]==ele.upper() and qn<=inv_data["Available_Stock"][i]:
-                self.prod_name.append(ele.upper())
-                self.quantity.append(qn)
+            flag = 0
+            if inv_data["Product_Name"][i]==ele.upper():
+                if qn<=inv_data["Available_Stock"][i]:
+                    self.prod_name.append(ele.upper())
+                    self.quantity.append(qn)
+                    break
+                else:
+                    flag += 1
             else:
-                print("\nSorry for the inconvenience! Your required product is either in Out of Stock or Not in our Stock.")
+                flag += 1
+        if flag != 0:
+            print("\nSorry for the inconvenience! Your required product is either in Out of Stock or Not in our Stock.")
            
 
     def remove(self,ele):
