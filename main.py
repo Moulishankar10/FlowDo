@@ -5,6 +5,7 @@
 # Development Status: Under development
 
 # REQUIRED MODULES
+import numpy as np
 import pandas as pd
 import csv
 # VISUALIZER FUNCTIONS:
@@ -60,6 +61,7 @@ class Biller:
         self.prod_name=[]
         self.quantity=[]
         self.price=[]
+        self.total_price=[]
         self.limit=l
         self.front=None
         self.rear=None
@@ -79,6 +81,7 @@ class Biller:
             else:
                 self.rear += 1
         inv_data = pd.read_csv('data/inventory.csv')
+        flag = 0
         for i in range(len(inv_data)):
             flag = 0
             if inv_data["Product_Name"][i]==ele.upper():
@@ -108,9 +111,12 @@ class Biller:
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
         else:
+            self.total_price = list(np.array(self.quantity)*np.array(self.price))
             print("\n--------- BILL ---------\n")
-            res = "\n".join("{}    {}".format(x, y) for x, y in zip(self.prod_name, self.quantity))
-            print(res,"\n")
+            form = {'Product Name':self.prod_name,'Quantity':self.quantity,'Cost(1)':self.price,'Total Cost':self.total_price}
+            res = pd.DataFrame(form)
+            res.index=list(range(1,len(self.prod_name)+1))
+            print(res)
 
     def modify(self,ele):
         if self.isEmpty():
@@ -119,7 +125,7 @@ class Biller:
             ind = self.prod_name.index(ele.upper())
             key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\nYour Option : "))
             if key == 0:
-                self.prod_name[ind] = input("\nEnter the new product name : ")
+                self.prod_name[ind] = input("\nEnter the new product name : ").upper()
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
@@ -165,19 +171,19 @@ def Order():
             orderOptionsVisualizer()
 
         elif order_option == 1:
-            ele = input("Enter the product name : ")
+            ele = input("Enter the product name : ").upper()
             qn = int(input("Enter the quantity : "))
             b.enqueue(ele,qn)
             
         elif order_option == 2:
-            ele = input("Enter the product name : ")
+            ele = input("Enter the product name : ").upper()
             b.remove(ele)
             
         elif order_option == 3:
             b.display()
         
         elif order_option == 4:
-            ele = input("Enter the product name : ")
+            ele = input("Enter the product name : ").upper()
             b.modify(ele)
         
         elif order_option == 5:
