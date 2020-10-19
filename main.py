@@ -7,7 +7,7 @@
 # REQUIRED MODULES
 import numpy as np
 import pandas as pd
-import csv
+from datetime import datetime
 # VISUALIZER FUNCTIONS:
 # Used to display keymaps for main menu and every submenu
 
@@ -130,13 +130,24 @@ class Biller:
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
+        today = datetime.today()
         inv_data = pd.read_csv('data/inventory.csv')
         for i in range(len(inv_data)):
             for j in range(len(self.prod_name)):
                 if inv_data["Product_Name"][i] == self.prod_name[j]:
                     inv_data["Available_Stock"][i] -= self.quantity[j]
-        inv_data.to_csv('data/inventory.csv', index=False)            
-        print("\nInventory Updated ! ")
+        inv_data.to_csv('data/inventory.csv', index=False)
+
+        rev_data = pd.read_csv("data/revenue.csv")
+        for i in range(len(rev_data)):
+            for j in range(len(self.prod_name)):
+                if rev_data["Product_Name"][i] == self.prod_name[j]:
+                    frmt = "{}-{}".format(today.month,today.year)
+                    rev_data[str(frmt)][i]+=self.total_price[j]
+        rev_data.to_csv('data/revenue.csv', index=False)
+            
+
+        print("\nData Updated ! ")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 def viewMonthRevenue():
@@ -244,6 +255,7 @@ def Inventory():
 if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
     print(" Here is the list of options available to you...")
+    
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     while True:
         mainOptionsVisualizer()
