@@ -8,6 +8,7 @@
 import numpy as np
 import pandas as pd
 from datetime import datetime
+
 # VISUALIZER FUNCTIONS:
 # Used to display keymaps for main menu and every submenu
 
@@ -130,7 +131,6 @@ class Biller:
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
     def postProcessor(self):
-        today = datetime.today()
         inv_data = pd.read_csv('data/inventory.csv')
         for i in range(len(inv_data)):
             for j in range(len(self.prod_name)):
@@ -151,7 +151,11 @@ class Biller:
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 def viewMonthRevenue():
-    pass
+    rev_data = pd.read_csv('data/revenue.csv')
+    frmt = "{}-{}".format(today.month,today.year)
+    month_revenue = sum(list(rev_data[frmt]))
+    print("The amount of revenue generated in this month is: ",month_revenue)
+
 def maxProfit():
     pass
 def minProfit():
@@ -219,7 +223,8 @@ def Revenue():
         rev_opt = int(input("Enter your option : "))
         if rev_opt == 0:
             revenueOptionsVisualizer()
-            continue
+        if rev_opt == 1:
+            viewMonthRevenue()
         elif rev_opt == 9:
             break
         
@@ -255,7 +260,7 @@ def Inventory():
 if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
     print(" Here is the list of options available to you...")
-    
+    today = datetime.today()
     #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
     while True:
         mainOptionsVisualizer()
