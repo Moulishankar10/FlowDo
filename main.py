@@ -39,8 +39,8 @@ def revenueOptionsVisualizer():
     print("\n************************************ REVENUE MENU ********************************************\n")
     print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
-    print("Press 2 for viewing the product which generated the most profit.")
-    print("Press 3 for viewing the product which generated the least profit.")
+    print("Press 2 for viewing the product which generated the maximum profit this month.")
+    print("Press 3 for viewing the product which generated the minimum profit this month.")
     print("Press 4 for viewing the revenue graph.")
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************\n")
@@ -157,7 +157,14 @@ def viewMonthRevenue():
     print("The amount of revenue generated in this month is: ",month_revenue)
 
 def maxProfit():
-    pass
+    rev_data = pd.read_csv('data/revenue.csv')
+    frmt = "{}-{}".format(today.month,today.year)
+    max_revenue = max(list(rev_data[frmt]))
+    for i in range(len(rev_data)):
+        if rev_data[frmt][i] == max_revenue:
+            res = rev_data["Product_Name"][i]
+
+    print(f"{res} has generated the maximum profit this month.")
 def minProfit():
     pass
 def viewRevenueGraph():
@@ -225,6 +232,8 @@ def Revenue():
             revenueOptionsVisualizer()
         if rev_opt == 1:
             viewMonthRevenue()
+        if rev_opt == 2:
+            maxProfit()
         elif rev_opt == 9:
             break
         
