@@ -113,7 +113,7 @@ class Biller:
             print("Sorry! It is an empty bill.")
         else:
             self.total_price = list(np.array(self.quantity)*np.array(self.price))
-            print("\n--------- BILL ---------\n")
+            
             form = {'Product Name':self.prod_name,'Quantity':self.quantity,'Cost(1)':self.price,'Total Cost':self.total_price}
             res = pd.DataFrame(form)
             res.index=list(range(1,len(self.prod_name)+1))
@@ -210,6 +210,7 @@ def Order():
             b.remove(ele)
             
         elif order_option == 3:
+            print("\n----------------------- BILL --------------------------\n")
             b.display()
         
         elif order_option == 4:
@@ -217,7 +218,7 @@ def Order():
             b.modify(ele)
         
         elif order_option == 5:
-            print("\n------------------Here's your Final Bill---------------\n")
+            print("\n-------------------- YOUR FINAL BILL ------------------\n")
             b.display()
             print("---------------------------------------------------------\n")
             key = input("Do you want to make any changes? (Y/N) : ")
