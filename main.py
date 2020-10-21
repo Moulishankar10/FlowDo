@@ -170,12 +170,13 @@ def maxProfit():
 def minProfit():
     rev_data = pd.read_csv('data/revenue.csv')
     frmt = "{}-{}".format(today.month,today.year)
-    min_revenue = min(list(rev_data[frmt]))
-    for i in range(len(rev_data)):
-        if rev_data[frmt][i] == min_revenue:
-            res = rev_data["Product_Name"][i]
+    min_lt = list(rev_data[frmt])
+    min_amount = min(min_lt)
+    print("The following product(s) generated the least profit : ")
+    if min_lt.count(min_amount) > 1:
+        for i in range(len(rev_data)):
+            
 
-    print(f"\n{res} has generated the minimum profit this month.")
 def viewRevenueGraph():
     pass
 
