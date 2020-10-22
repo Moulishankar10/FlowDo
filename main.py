@@ -167,7 +167,6 @@ def maxProfit():
         if rev_data[frmt][i] == max_amt:
             print("{} - Rs.{}".format(rev_data["Product_Name"][i],max_amt))
 
-    print(f"\n{res} has generated the maximum profit this month.")
 def minProfit():
     rev_data = pd.read_csv('data/revenue.csv')
     frmt = "{}-{}".format(today.month,today.year)
