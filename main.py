@@ -161,10 +161,11 @@ def viewMonthRevenue():
 def maxProfit():
     rev_data = pd.read_csv('data/revenue.csv')
     frmt = "{}-{}".format(today.month,today.year)
-    max_revenue = max(list(rev_data[frmt]))
+    max_amt = max(list(rev_data[frmt]))
+    print("\nThe following product(s) generated the maximum profit : \n")
     for i in range(len(rev_data)):
-        if rev_data[frmt][i] == max_revenue:
-            res = rev_data["Product_Name"][i]
+        if rev_data[frmt][i] == max_amt:
+            print("{} - Rs.{}".format(rev_data["Product_Name"][i],max_amt))
 
     print(f"\n{res} has generated the maximum profit this month.")
 def minProfit():
