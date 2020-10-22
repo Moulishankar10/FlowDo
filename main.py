@@ -56,6 +56,11 @@ def inventoryOptionsVisualizer():
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************\n")
 
+def revMonthChecker():
+    today = datetime.today()
+    frmt = "{}-{}".format(today.month,today.year)
+    rev_data = pd.read_csv('data/revenue.csv')
+    
 # CLASS FOR BILLING OPERATIONS
 class Biller:
     def __init__(self,l):
