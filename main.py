@@ -65,7 +65,7 @@ def revMonthChecker():
     x = [0]*len(rev_data)
     if frmt not in header:
         rev_data[frmt] = x
-    rev_data.to_csv("data/revenue.csv")
+    rev_data.to_csv("data/revenue.csv", index = False)
     
 # CLASS FOR BILLING OPERATIONS
 class Biller:
@@ -333,4 +333,5 @@ if __name__ == "__main__":
             Inventory()
             
         elif option == 9:
+            #print("Thanks for using FlowDo!")
             break
