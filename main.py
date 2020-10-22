@@ -60,6 +60,11 @@ def revMonthChecker():
     today = datetime.today()
     frmt = "{}-{}".format(today.month,today.year)
     rev_data = pd.read_csv('data/revenue.csv')
+    header = list(rev_data.columns)
+    x = [0]*len(rev_data)
+    if frmt not in header:
+        rev_data[frmt] = x
+    rev_data.to_csv("data/revenue.csv")
     
 # CLASS FOR BILLING OPERATIONS
 class Biller:
@@ -290,7 +295,7 @@ if __name__ == "__main__":
     print("Its FlowDo! I can help you manage your business with ease...")
     print(" Here is the list of options available to you...")
     today = datetime.today()
-    #inv_table,prod_code,prod_name,avail_stock,max_stock,revenue = dataImporter()
+    revMonthChecker()
     while True:
         mainOptionsVisualizer()
         option = int(input("Enter your option : "))
