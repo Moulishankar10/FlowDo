@@ -224,10 +224,13 @@ def viewRevenueGraph():
     
 
 #INDIVIDUAL FUNCTIONS USED IN INVENTORY SUB MENU
+
+# FUNCTION TO VIEW THE STOCK INVENTORY
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     print(inv_data)
 
+# FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     serial = int(input("Enter the Serial No: "))
@@ -241,6 +244,7 @@ def addProdInventory():
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\nProduct Added to Inventory!")
 
+# FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
     ind = 0
     inv_data = pd.read_csv("data/inventory.csv")
@@ -252,6 +256,7 @@ def removeProdInventory():
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\nProduct is Removed from Inventory!")
             
+# FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
     ind = 0
     inv_data = pd.read_csv("data/inventory.csv")
