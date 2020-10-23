@@ -306,7 +306,7 @@ def Order():
             b.enqueue(ele,qn)
             
         elif order_option == 2:
-            ele = input("Enter the product name : ").upper()
+            ele = input("\nEnter the product name : ").upper()
             b.remove(ele)
             
         elif order_option == 3:
@@ -314,7 +314,7 @@ def Order():
             b.display()
         
         elif order_option == 4:
-            ele = input("Enter the product name : ").upper()
+            ele = input("\nEnter the product name : ").upper()
             b.modify(ele)
         
         elif order_option == 5:
