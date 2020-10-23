@@ -313,8 +313,31 @@ def Inventory():
 
 # MAIN FUNCTION
 if __name__ == "__main__":
-    print("Its FlowDo! I can help you manage your business with ease...")
-    print(" Here is the list of options available to you...")
+    #print("Its FlowDo! I can help you manage your business with ease...")
+    #print(" Here is the list of options available to you...")
+    print("""
+    \n=========================== WELCOME TO FLOWDO ============================\n
+                        LET'S HAVE YOUR BUSINESS WITH EASE BY FLOWDO             
+                        
+     ____________________________________________________________________________
+    |                                                                            |
+    |           FIRST, SETUP YOUR INVENTORY TO PROCESS THE ORDERS                |
+    |                                                                            |
+    |        ```````````````````````````````````````````````````````             |
+    |                                                                            |
+    |            IF IT IS ALL SET, PLEASE ENSURE THAT ALL PRODUCTS               |
+    |                                                                            |
+    |                 ARE IN SUFFICIENT QUANTITY TO PROCEED                      |
+    |                                                                            |
+    |                            THE ORDERS                                      |
+    |                                                                            |
+    |        ```````````````````````````````````````````````````````             |
+    |                                                                            |
+    |                         NOW LET'S MOVE ON!                                 |
+    |                                                                            |
+    |____________________________________________________________________________|
+    
+    """)
     today = datetime.today()
     revMonthChecker()
     while True:
