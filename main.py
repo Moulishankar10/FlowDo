@@ -91,7 +91,7 @@ class Biller:
     # FUNCTION TO ADD A NEW PRODUCT TO THE BILL        
     def enqueue(self,ele,qn):
         if self.isFull():
-            print("Maximum limit reached!")
+            print("\nMaximum limit reached!")
         else:
             if self.front==None and self.rear==None:
                 self.front=self.rear=0
@@ -117,7 +117,7 @@ class Biller:
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
         if self.isEmpty():
-            print("Sorry! It is an empty bill.")
+            print("\nSorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele)
             del self.prod_name[ind]
@@ -127,7 +127,7 @@ class Biller:
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
         if self.isEmpty():
-            print("Sorry! It is an empty bill.")
+            print("\nSorry! It is an empty bill.")
         else:
             self.total_price = list(np.array(self.quantity)*np.array(self.price))
             
@@ -142,7 +142,7 @@ class Biller:
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self,ele):
         if self.isEmpty():
-            print("Sorry! It is an empty bill.")
+            print("\nSorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele.upper())
             key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\nYour Option : "))
