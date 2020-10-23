@@ -1,5 +1,5 @@
 # FLOWDO
-# FlowDo is a application created for the purpose of managing business activities like Inventory Maintenance, Billing, Sales analysis and other business functions.
+# FlowDo is an application created for the purpose of managing business activities like Inventory Maintenance, Billing, Sales analysis and other business functions.
 
 # Developed by:
 
@@ -88,7 +88,7 @@ class Biller:
     def isEmpty(self):
         return self.front==None
 
-    # FUNCTION TO ADD A NEW PRODUCT TO A BILL        
+    # FUNCTION TO ADD A NEW PRODUCT TO THE BILL        
     def enqueue(self,ele,qn):
         if self.isFull():
             print("Maximum limit reached!")
@@ -114,7 +114,7 @@ class Biller:
         if flag != 0:
             print("\nSorry for the inconvenience! Your required product is either in Out of Stock or Not in our Stock.")
 
-    # FUNCTION TO REMOVE A PRODUCT FROM A BILL
+    # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -124,7 +124,7 @@ class Biller:
             del self.quantity[ind]
             self.rear -= 1
 
-    # FUNCTION TO DISPLAY CONTENTS OF A BILL
+    # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -139,7 +139,7 @@ class Biller:
             print("Grand Total           :  Rs.",sum(self.total_price))
             print("\n=======================================================\n")
 
-    # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN A BILL
+    # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
