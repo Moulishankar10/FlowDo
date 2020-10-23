@@ -321,7 +321,7 @@ def Order():
             print("\n-------------------- YOUR FINAL BILL ------------------\n")
             b.display()
             print("---------------------------------------------------------\n")
-            key = input("Do you want to make any changes? (Y/N) : ")
+            key = input("\nDo you want to make any changes? (Y/N) : ")
             if key == "Y" or key == "y":
                 pass
             elif key == "N" or key == "n":
@@ -335,7 +335,7 @@ def Revenue():
     
     while True:
         revenueOptionsVisualizer()
-        rev_opt = int(input("Enter your option : "))
+        rev_opt = int(input("\nEnter your option : "))
         if rev_opt == 0:
             revenueOptionsVisualizer()
         if rev_opt == 1:
@@ -354,7 +354,7 @@ def Inventory():
     # SUB FUNCTIONS SHOULD BE ADDED
     while True:
         inventoryOptionsVisualizer()
-        inv_opt = int(input("Enter your option : "))
+        inv_opt = int(input("\nEnter your option : "))
         if inv_opt == 0:
             inventoryOptionsVisualizer()
         elif inv_opt == 1:
@@ -398,7 +398,7 @@ if __name__ == "__main__":
     revMonthChecker()
     while True:
         mainOptionsVisualizer()
-        option = int(input("Enter your option : "))
+        option = int(input("\nEnter your option : "))
         if option == 0:
             mainOptionsVisualizer()
             
