@@ -145,7 +145,7 @@ class Biller:
             print("\nSorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele.upper())
-            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\nYour Option : "))
+            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\n\nYour Option : "))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ").upper()
             elif key == 1:
