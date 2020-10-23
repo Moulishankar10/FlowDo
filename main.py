@@ -317,7 +317,7 @@ if __name__ == "__main__":
     #print(" Here is the list of options available to you...")
     print("""
     \n======================================= WELCOME TO FLOWDO =========================================\n
-                            LET'S HAVE YOUR BUSINESS WITH EASE BY FLOWDO             
+                             LET'S HAVE YOUR BUSINESS WITH EASE BY FLOWDO             
                         
               _______________________________________________________________________
              |                                                                       |
@@ -327,13 +327,13 @@ if __name__ == "__main__":
              |                                                                       |
              |            IF IT IS ALL SET, PLEASE ENSURE THAT ALL PRODUCTS          |
              |                                                                       |
-             |                 ARE IN SUFFICIENT QUANTITY TO PROCEED                 |
+             |                  ARE IN SUFFICIENT QUANTITY TO PROCEED                |
              |                                                                       |
-             |                            THE ORDERS                                 |
+             |                               THE ORDERS                              |
              |                                                                       |
              |        ```````````````````````````````````````````````````````        |
              |                                                                       |
-             |                         NOW LET'S MOVE ON!                            |
+             |                            NOW LET'S MOVE ON!                         |
              |                                                                       |
              |_______________________________________________________________________|
 
