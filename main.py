@@ -1,8 +1,10 @@
 # FLOWDO
 # FlowDo is a application created for the purpose of managing business activities like Inventory Maintenance, Billing, Sales analysis and other business functions.
 
-# Developed by: Moulishankar M R (@Moulishankar10) , Vigneshwar K R (@ToastCoder), Vishal Balaji Sivaraman (@The-SocialLion)
-# Development Status: Under development
+# Developed by:
+
+# Moulishankar M R (@Moulishankar10)
+# Vigneshwar K R (@ToastCoder)
 
 # REQUIRED MODULES
 import numpy as np
@@ -57,6 +59,7 @@ def inventoryOptionsVisualizer():
     print("Press 9 for exit.")  
     print("\n**********************************************************************************************\n")
 
+# USED TO CHECK IF THE COLUMN FOR THE MONTH IS CREATED OR NOT
 def revMonthChecker():
     today = datetime.today()
     frmt = "{}-{}".format(today.month,today.year)
@@ -69,6 +72,7 @@ def revMonthChecker():
     
 # CLASS FOR BILLING OPERATIONS
 class Biller:
+
     def __init__(self,l):
         self.prod_name=[]
         self.quantity=[]
@@ -83,7 +87,8 @@ class Biller:
             
     def isEmpty(self):
         return self.front==None
-            
+
+    # FUNCTION TO ADD A NEW PRODUCT TO A BILL        
     def enqueue(self,ele,qn):
         if self.isFull():
             print("Maximum limit reached!")
@@ -108,8 +113,8 @@ class Biller:
                 flag += 1
         if flag != 0:
             print("\nSorry for the inconvenience! Your required product is either in Out of Stock or Not in our Stock.")
-           
 
+    # FUNCTION TO REMOVE A PRODUCT FROM A BILL
     def remove(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -118,7 +123,8 @@ class Biller:
             del self.prod_name[ind]
             del self.quantity[ind]
             self.rear -= 1
-    
+
+    # FUNCTION TO DISPLAY CONTENTS OF A BILL
     def display(self):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -133,6 +139,7 @@ class Biller:
             print("Grand Total           :  Rs.",sum(self.total_price))
             print("\n=======================================================\n")
 
+    # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN A BILL
     def modify(self,ele):
         if self.isEmpty():
             print("Sorry! It is an empty bill.")
@@ -143,6 +150,8 @@ class Biller:
                 self.prod_name[ind] = input("\nEnter the new product name : ").upper()
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
+
+    # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
         today = datetime.today()
         inv_data = pd.read_csv('data/inventory.csv')
@@ -159,11 +168,10 @@ class Biller:
                     frmt = "{}-{}".format(today.month,today.year)
                     rev_data[str(frmt)][i]+=self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
-            
-
         print("\nData Updated ! ")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
+
 def viewMonthRevenue():
     today = datetime.today()
     rev_data = pd.read_csv('data/revenue.csv')
@@ -192,14 +200,14 @@ def minProfit():
             print("{} - Rs.{}".format(rev_data["Product_Name"][i],min_amt))
         
 def viewRevenueGraph():
+    profits =[]
+    months = []
     today = datetime.today()
     rev_data = pd.read_csv("data/revenue.csv")
-    months = []
     cols = list(rev_data.columns)
     for i in cols:
         if i[-4:] == str(today.year):
             months.append(i)
-    profits =[]
     for i in months:
         profits.append(sum(list(rev_data[i])))
     plt.scatter(months, profits,color ='red',linewidths=3) 
@@ -213,16 +221,65 @@ def viewRevenueGraph():
 
 #INDIVIDUAL FUNCTIONS USED IN INVENTORY SUB MENU
 def viewInventory():
-    pass
+    inv_data = pd.read_csv("data/inventory.csv")
+    print(inv_data)
+
 def addProdInventory():
-    pass
+    inv_data = pd.read_csv("data/inventory.csv")
+    serial = int(input("Enter the Serial No: "))
+    prod_code = input("Enter the Product Code: ")
+    prod_name = input("Enter the Product Name: ")
+    avail_stock = int(input("Enter the Available Stock: "))
+    max_stock = int(input("Enter the Maximum Stock: "))
+    cost_price = int(input("Enter the Cost Price: "))
+    selling_price = int(input("Enter the Selling Price: "))
+    inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
+    inv_data.to_csv("data/inventory.csv",index=False)
+    print("\nProduct Added to Inventory!")
+
 def removeProdInventory():
-    pass
+    ind = 0
+    inv_data = pd.read_csv("data/inventory.csv")
+    prod_name = input("Enter the product name to remove: ").upper()
+    for i in range(len(inv_data)):
+        if inv_data["Product_Name"][i] == prod_name:
+            ind = i
+    inv_data.drop([ind],axis = 0,inplace = True)
+    inv_data.to_csv("data/inventory.csv",index=False)
+    print("\nProduct is Removed from Inventory!")
+            
 def modifyProduct():
-    pass
+    ind = 0
+    inv_data = pd.read_csv("data/inventory.csv")
+    prod_name = input("Enter the product name to modify: ").upper()
+    for i in range(len(inv_data)):
+        if inv_data["Product_Name"][i] == prod_name:
+            ind = i
+    print("\nPress 1 to modify Product Code.")
+    print("Press 2 to modify Product Name.")
+    print("Press 3 to modify Available Stock.")
+    print("Press 4 to modify Maximum Stock")
+    print("Press 5 to modify Cost Price.")
+    print("Press 6 for modifying Selling Price.")
+    print("Press 9 for exit.\n")  
+    option = int(input("Enter your Option: "))
+    if option == 1:
+        inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product: ")
+    elif option == 2:
+        inv_data["Product_Name"][ind] = input("\nEnter the new Product Name for this product: ").upper()
+    elif option == 3:
+        inv_data["Available_Stock"][ind] = int(input("\nEnter the new value for Available Stock: "))
+    elif option == 4:
+        inv_data["Maximum_Stock"][ind] = int(input("\nEnter the new value for Maximum Stock: "))
+    elif option == 5:
+        inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price: "))
+    elif option == 6:
+        inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Price: "))
+
+    inv_data.to_csv("data/inventory.csv",index=False)
+    print("\nModified the mentioned values!")
 
 # FUNCTIONS FOR THE SUB MENU
-
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
     l = int(input("Enter the number of products : "))
@@ -291,30 +348,20 @@ def Inventory():
         inv_opt = int(input("Enter your option : "))
         if inv_opt == 0:
             inventoryOptionsVisualizer()
-            continue
+        elif inv_opt == 1:
+            viewInventory()
+        elif inv_opt == 2:
+            addProdInventory()
+        elif inv_opt == 3:
+            removeProdInventory()
+        elif inv_opt == 4:
+            modifyProduct()
         elif inv_opt == 9:
             break
             
-#def dataImporter():
-#    inventory = pd.DataFrame(pd.read_csv('data/inventory.csv'))
-#    revenue = pd.DataFrame(pd.read_csv('data/revenue.csv'))
-   
-#    inv_table = inventory
-#    prod_code = inventory.Product_Code
-#    prod_name = inventory.Product_Name
-#    avail_stock = inventory.Available_Stock
-#    max_stock = inventory.Maximum_Stock
-#    return inv_table,prod_code,prod_name,avail_stock,max_stock,revenue
-
-
-
-        
-        
-
 # MAIN FUNCTION
 if __name__ == "__main__":
-    #print("Its FlowDo! I can help you manage your business with ease...")
-    #print(" Here is the list of options available to you...")
+    
     print("""
     \n======================================= WELCOME TO FLOWDO =========================================\n
                              LET'S HAVE YOUR BUSINESS WITH EASE BY FLOWDO             
@@ -356,5 +403,4 @@ if __name__ == "__main__":
             Inventory()
             
         elif option == 9:
-            #print("Thanks for using FlowDo!")
             break
