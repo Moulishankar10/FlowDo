@@ -321,19 +321,19 @@ if __name__ == "__main__":
                         
               _______________________________________________________________________
              |                                                                       |
-             |           FIRST, SETUP YOUR INVENTORY TO PROCESS THE ORDERS           |
+             |           FIRST, SETUP YOUR INVENTORY TO PROCEED THE ORDERS           |
              |                                                                       |
              |        ```````````````````````````````````````````````````````        |
              |                                                                       |
-             |            IF IT IS ALL SET, PLEASE ENSURE THAT ALL PRODUCTS          |
+             |         IF IT IS ALL SET, PLEASE ENSURE THAT ALL THE PRODUCTS         |
              |                                                                       |
-             |                  ARE IN SUFFICIENT QUANTITY TO PROCEED                |
+             |                 ARE IN SUFFICIENT QUANTITY TO PROCEED                 |
              |                                                                       |
-             |                               THE ORDERS                              |
+             |                              THE ORDERS                               |
              |                                                                       |
              |        ```````````````````````````````````````````````````````        |
              |                                                                       |
-             |                            NOW LET'S MOVE ON!                         |
+             |                          NOW, LET'S MOVE ON!                          |
              |                                                                       |
              |_______________________________________________________________________|
 
