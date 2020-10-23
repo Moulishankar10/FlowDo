@@ -291,7 +291,7 @@ def modifyProduct():
 # FUNCTIONS FOR THE SUB MENU
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
 def Order():
-    l = int(input("Enter the number of products : "))
+    l = int(input("\nEnter the number of products : "))
     b = Biller(l)
     
     while True:
@@ -301,8 +301,8 @@ def Order():
             orderOptionsVisualizer()
 
         elif order_option == 1:
-            ele = input("Enter the product name : ").upper()
-            qn = int(input("Enter the quantity : "))
+            ele = input("\nEnter the product name : ").upper()
+            qn = int(input("\nEnter the quantity : "))
             b.enqueue(ele,qn)
             
         elif order_option == 2:
