@@ -233,13 +233,13 @@ def viewInventory():
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    serial = int(input("Enter the Serial No: "))
-    prod_code = input("Enter the Product Code: ")
-    prod_name = input("Enter the Product Name: ")
-    avail_stock = int(input("Enter the Available Stock: "))
-    max_stock = int(input("Enter the Maximum Stock: "))
-    cost_price = int(input("Enter the Cost Price: "))
-    selling_price = int(input("Enter the Selling Price: "))
+    serial = int(input("\nEnter the Serial No : "))
+    prod_code = input("\nEnter the Product Code : ")
+    prod_name = input("\nEnter the Product Name : ")
+    avail_stock = int(input("\nEnter the Available Stock : "))
+    max_stock = int(input("\nEnter the Maximum Stock : "))
+    cost_price = int(input("\nEnter the Cost Price : "))
+    selling_price = int(input("\nEnter the Selling Price : "))
     inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\nProduct Added to Inventory!")
