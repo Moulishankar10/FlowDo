@@ -228,8 +228,8 @@ def viewRevenueGraph():
 # FUNCTION TO VIEW THE STOCK INVENTORY
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    print("\n--------------------------------------- STOCK INVENTORY -----------------------------------\n\n",inv_data.to_string(index=False))
-
+    print("\n---------------------------------------- STOCK INVENTORY ------------------------------------\n\n",inv_data.to_string(index=False))
+-
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
@@ -246,7 +246,6 @@ def addProdInventory():
 
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
-    ind = 0
     inv_data = pd.read_csv("data/inventory.csv")
     prod_name = input("\nEnter the product name to remove : ").upper()
     for i in range(len(inv_data)):
@@ -258,7 +257,6 @@ def removeProdInventory():
             
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
-    ind = 0
     inv_data = pd.read_csv("data/inventory.csv")
     prod_name = input("\nEnter the product name to modify : ").upper()
     for i in range(len(inv_data)):
