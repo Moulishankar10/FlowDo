@@ -277,6 +277,8 @@ def modifyProduct():
         inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price : "))
     elif option == 6:
         inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Pric e: "))
+    elif option not in [1,2,3,4,5,6]:
+            print("\n!!!!! Please enter the valid option !!!!!\n")
 
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\nModified the mentioned values!")
@@ -290,8 +292,6 @@ def Order():
     while True:
         orderOptionsVisualizer()
         order_option = int(input("Enter your option : "))
-        if order_option == 0:
-            orderOptionsVisualizer()
 
         elif order_option == 1:
             ele = input("\nEnter the product name : ").upper()
@@ -319,8 +319,12 @@ def Order():
                 pass
             elif key == "N" or key == "n":
                 b.postProcessor()
+        
         elif order_option == 9:
             break
+
+        elif option not in [1,2,3,4,5]:
+            print("\n!!!!! Please enter the valid option !!!!!\n")
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def Revenue():
@@ -329,8 +333,6 @@ def Revenue():
     while True:
         revenueOptionsVisualizer()
         rev_opt = int(input("\nEnter your option : "))
-        if rev_opt == 0:
-            revenueOptionsVisualizer()
         if rev_opt == 1:
             viewMonthRevenue()
         if rev_opt == 2:
@@ -341,6 +343,8 @@ def Revenue():
             viewRevenueGraph()
         elif rev_opt == 9:
             break
+        elif option not in [1,2,3,4]:
+            print("\n!!!!! Please enter the valid option !!!!!\n")
         
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
