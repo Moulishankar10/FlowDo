@@ -228,14 +228,14 @@ def viewRevenueGraph():
 # FUNCTION TO VIEW THE STOCK INVENTORY
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    print("\n------------------------------------- STOCK INVENTORY ---------------------------------\n\n",inv_data)
+    print("\n--------------------------------------- STOCK INVENTORY -----------------------------------\n\n",inv_data.to_string(index=False))
 
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     serial = int(input("\nEnter the Serial No : "))
     prod_code = input("\nEnter the Product Code : ").upper()
-    prod_name = input("\nEnter the Product Name : ")
+    prod_name = input("\nEnter the Product Name : ").upper()
     avail_stock = int(input("\nEnter the Available Stock : "))
     max_stock = int(input("\nEnter the Maximum Stock : "))
     cost_price = int(input("\nEnter the Cost Price : "))
