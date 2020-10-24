@@ -234,7 +234,7 @@ def viewInventory():
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     serial = int(input("\nEnter the Serial No : "))
-    prod_code = input("\nEnter the Product Code : ")
+    prod_code = input("\nEnter the Product Code : ").upper()
     prod_name = input("\nEnter the Product Name : ")
     avail_stock = int(input("\nEnter the Available Stock : "))
     max_stock = int(input("\nEnter the Maximum Stock : "))
