@@ -248,7 +248,7 @@ def addProdInventory():
 def removeProdInventory():
     ind = 0
     inv_data = pd.read_csv("data/inventory.csv")
-    prod_name = input("Enter the product name to remove: ").upper()
+    prod_name = input("\nEnter the product name to remove: ").upper()
     for i in range(len(inv_data)):
         if inv_data["Product_Name"][i] == prod_name:
             ind = i
