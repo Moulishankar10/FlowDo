@@ -225,7 +225,7 @@ def viewRevenueGraph():
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     print("\n---------------------------------------- STOCK INVENTORY ------------------------------------\n\n",inv_data.to_string(index=False))
--
+
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
