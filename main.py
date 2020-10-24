@@ -348,8 +348,6 @@ def Inventory():
     while True:
         inventoryOptionsVisualizer()
         inv_opt = int(input("\nEnter your option : "))
-        if inv_opt == 0:
-            inventoryOptionsVisualizer()
         elif inv_opt == 1:
             viewInventory()
         elif inv_opt == 2:
@@ -360,6 +358,8 @@ def Inventory():
             modifyProduct()
         elif inv_opt == 9:
             break
+        elif option not in [1,2,3,4]:
+            print("\n!!!!! Please enter the valid option !!!!!\n")
             
 # MAIN FUNCTION
 if __name__ == "__main__":
@@ -392,8 +392,6 @@ if __name__ == "__main__":
     while True:
         mainOptionsVisualizer()
         option = int(input("\nEnter your option : "))
-        if option == 0:
-            mainOptionsVisualizer()
             
         elif option == 1:
             Order()
@@ -406,3 +404,6 @@ if __name__ == "__main__":
             
         elif option == 9:
             break
+        
+        elif option not in [1,2,3]:
+            print("\n!!!!! Please enter the valid option !!!!!\n")
