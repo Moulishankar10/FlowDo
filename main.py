@@ -49,23 +49,36 @@ def orderOptionsVisualizer():
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
-    print("\n************************************ REVENUE MENU ********************************************\n")
-    print("Press 1 for viewing this month's total revenue.")
-    print("Press 2 for viewing the product which generated the maximum profit this month.")
-    print("Press 3 for viewing the product which generated the minimum profit this month.")
-    print("Press 4 for viewing the revenue graph.")
-    print("Press 9 for exit.")  
-    print("\n**********************************************************************************************\n")
+    print("""
+        \n****************************************** ORDER MENU *********************************************\n
+                Press 1 for viewing this month's total revenue.
+
+                Press 2 for viewing the product which generated the maximum profit this month.
+
+                Press 3 for viewing the product which generated the minimum profit this month.
+
+                Press 4 for viewing the revenue graph.
+
+                Press 9 for exit.
+        \n**************************************************************************************************\n
+    """)
+    
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
-    print("\n************************************* INVENTORY MENU *****************************************\n")
-    print("Press 1 for viewing your inventory.")
-    print("Press 2 for Adding a new product to your inventory.")
-    print("Press 3 for Removing a product from your inventory.")
-    print("Press 4 to modify the properties of existing products.")
-    print("Press 9 for exit.")  
-    print("\n**********************************************************************************************\n")
+    print("""
+        \n****************************************** ORDER MENU *********************************************\n
+                                Press 1 for viewing your inventory.
+
+                                Press 2 for Adding a new product to your inventory.
+
+                                Press 3 for Removing a product from your inventory.
+
+                                Press 4 to modify the properties of existing products.
+
+                                Press 9 for exit.
+        \n**************************************************************************************************\n
+    """)
 
 # USED TO CHECK IF THE COLUMN FOR THE MONTH IS CREATED OR NOT
 def revMonthChecker():
@@ -114,6 +127,7 @@ class Biller:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
                     self.price.append(inv_data["Selling_Price"][i])
+                    print("\n>>>>>>>> Product Added to the Order. <<<<<<<<\n")
                     break
                 else:
                     flag += 1
@@ -131,6 +145,7 @@ class Biller:
             del self.prod_name[ind]
             del self.quantity[ind]
             self.rear -= 1
+            print("\n>>>>>>>> Product Removed from the Order. <<<<<<<<\n")
 
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
@@ -158,7 +173,7 @@ class Biller:
                 self.prod_name[ind] = input("\nEnter the new product name : ").upper()
             elif key == 1:
                 self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
-
+        print("\n>>>>>>>> Modified the mentioned value in the Order. <<<<<<<<\n")
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
         today = datetime.today()
@@ -250,7 +265,7 @@ def addProdInventory():
     selling_price = int(input("\nEnter the Selling Price : "))
     inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nProduct Added to Inventory!")
+    print("\nProduct Added to Inventory!\n")
 
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
@@ -261,7 +276,7 @@ def removeProdInventory():
             ind = i
     inv_data.drop([ind],axis = 0,inplace = True)
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nProduct is Removed from Inventory!")
+    print("\nProduct is Removed from Inventory!\n")
             
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
@@ -271,12 +286,12 @@ def modifyProduct():
         if inv_data["Product_Name"][i] == prod_name:
             ind = i
     print("\nPress 1 to modify Product Code.")
-    print("Press 2 to modify Product Name.")
-    print("Press 3 to modify Available Stock.")
-    print("Press 4 to modify Maximum Stock")
-    print("Press 5 to modify Cost Price.")
-    print("Press 6 for modifying Selling Price.\n")
-    option = int(input("Enter your Option : "))
+    print("\nPress 2 to modify Product Name.")
+    print("\nPress 3 to modify Available Stock.")
+    print("\nPress 4 to modify Maximum Stock")
+    print("\nPress 5 to modify Cost Price.")
+    print("\nPress 6 for modifying Selling Price.\n")
+    option = int(input("\nEnter your Option : "))
     if option == 1:
         inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product : ")
     elif option == 2:
@@ -293,7 +308,7 @@ def modifyProduct():
             print("\n!!!!! Please enter the valid option !!!!!\n")
 
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nModified the mentioned values!")
+    print("\nModified the mentioned values!\n")
 
 # FUNCTIONS FOR THE SUB MENU
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
