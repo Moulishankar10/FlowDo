@@ -17,23 +17,35 @@ import matplotlib.pyplot as plt
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
-    print("\n*************************************** MAIN MENU ********************************************\n")
-    print("Press 1 for Adding a new order")
-    print("Press 2 for displaying the revenue options.")
-    print("Press 3 for displaying the inventory options.")
-    print("Press 9 for exit.")
-    print("\n**********************************************************************************************\n")
+    print("""
+        \n****************************************** MAIN MENU *********************************************\n
+                                Press 1 for Adding a new order.
+
+                                Press 2 for displaying the revenue options.
+
+                                Press 3 for displaying the inventory options.
+
+                                Press 9 for exit.
+        \n**************************************************************************************************\n
+    """)
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
-    print("\n************************************* ORDER MENU *********************************************\n")
-    print("Press 1 for Adding a new product.")
-    print("Press 2 for Removing a product.")
-    print("Press 3 for viewing the bill.")
-    print("Press 4 to modify your order.")
-    print("Press 5 to proceed your order.")
-    print("Press 9 for exit.")
-    print("\n**********************************************************************************************\n")
+    print("""
+        \n****************************************** ORDER MENU *********************************************\n
+                                Press 1 for Adding a new product.
+
+                                Press 2 for Removing a product.
+
+                                Press 3 for viewing the bill.
+
+                                Press 4 to modify your order.
+
+                                Press 5 to proceed your order.
+
+                                Press 9 for exit.
+        \n**************************************************************************************************\n
+    """)
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
@@ -293,7 +305,7 @@ def Order():
         orderOptionsVisualizer()
         order_option = int(input("Enter your option : "))
 
-        elif order_option == 1:
+        if order_option == 1:
             ele = input("\nEnter the product name : ").upper()
             qn = int(input("\nEnter the quantity : "))
             b.enqueue(ele,qn)
@@ -323,7 +335,7 @@ def Order():
         elif order_option == 9:
             break
 
-        elif option not in [1,2,3,4,5]:
+        elif order_option not in [1,2,3,4,5]:
             print("\n!!!!! Please enter the valid option !!!!!\n")
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
@@ -335,15 +347,15 @@ def Revenue():
         rev_opt = int(input("\nEnter your option : "))
         if rev_opt == 1:
             viewMonthRevenue()
-        if rev_opt == 2:
+        elif rev_opt == 2:
             maxProfit()
-        if rev_opt == 3:
+        elif rev_opt == 3:
             minProfit()
-        if rev_opt == 4:
+        elif rev_opt == 4:
             viewRevenueGraph()
         elif rev_opt == 9:
             break
-        elif option not in [1,2,3,4]:
+        elif rev_opt not in [1,2,3,4]:
             print("\n!!!!! Please enter the valid option !!!!!\n")
         
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
@@ -352,7 +364,7 @@ def Inventory():
     while True:
         inventoryOptionsVisualizer()
         inv_opt = int(input("\nEnter your option : "))
-        elif inv_opt == 1:
+        if inv_opt == 1:
             viewInventory()
         elif inv_opt == 2:
             addProdInventory()
@@ -362,7 +374,7 @@ def Inventory():
             modifyProduct()
         elif inv_opt == 9:
             break
-        elif option not in [1,2,3,4]:
+        elif inv_opt not in [1,2,3,4]:
             print("\n!!!!! Please enter the valid option !!!!!\n")
             
 # MAIN FUNCTION
@@ -397,7 +409,7 @@ if __name__ == "__main__":
         mainOptionsVisualizer()
         option = int(input("\nEnter your option : "))
             
-        elif option == 1:
+        if option == 1:
             Order()
             
         elif option == 2:
