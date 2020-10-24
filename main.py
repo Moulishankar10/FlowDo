@@ -77,7 +77,7 @@ def inventoryOptionsVisualizer():
                                 Press 4 to modify the properties of existing products.
 
                                 Press 9 for exit.
-        \n**************************************************************************************************\n
+        \n****************************************************************************************************\n
     """)
 
 # USED TO CHECK IF THE COLUMN FOR THE MONTH IS CREATED OR NOT
@@ -127,7 +127,7 @@ class Biller:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
                     self.price.append(inv_data["Selling_Price"][i])
-                    print("\n>>>>>>>> Product Added to the Order. <<<<<<<<\n")
+                    print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
                     break
                 else:
                     flag += 1
@@ -145,7 +145,7 @@ class Biller:
             del self.prod_name[ind]
             del self.quantity[ind]
             self.rear -= 1
-            print("\n>>>>>>>> Product Removed from the Order. <<<<<<<<\n")
+            print("\n>>>>>>>> Product is Removed from the Order. <<<<<<<<\n")
 
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
@@ -251,7 +251,7 @@ def viewRevenueGraph():
 # FUNCTION TO VIEW THE STOCK INVENTORY
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    print("\n---------------------------------------- STOCK INVENTORY ------------------------------------\n\n",inv_data.to_string(index=False))
+    print("\n----------------------------------------- STOCK INVENTORY -------------------------------------\n\n",inv_data.to_string(index=False))
 
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
@@ -265,7 +265,7 @@ def addProdInventory():
     selling_price = int(input("\nEnter the Selling Price : "))
     inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nProduct Added to Inventory!\n")
+    print("\n>>>>>>>> Product Added to the Inventory. <<<<<<<<\n")
 
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
@@ -276,7 +276,7 @@ def removeProdInventory():
             ind = i
     inv_data.drop([ind],axis = 0,inplace = True)
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nProduct is Removed from Inventory!\n")
+    print("\n>>>>>>>> Product is Removed from the Inventory. <<<<<<<<\n")
             
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
@@ -285,12 +285,15 @@ def modifyProduct():
     for i in range(len(inv_data)):
         if inv_data["Product_Name"][i] == prod_name:
             ind = i
+    print("\n--------------------------------------------\n")
     print("\nPress 1 to modify Product Code.")
     print("\nPress 2 to modify Product Name.")
     print("\nPress 3 to modify Available Stock.")
     print("\nPress 4 to modify Maximum Stock")
     print("\nPress 5 to modify Cost Price.")
     print("\nPress 6 for modifying Selling Price.\n")
+    print("\n--------------------------------------------\n")
+
     option = int(input("\nEnter your Option : "))
     if option == 1:
         inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product : ")
@@ -308,7 +311,7 @@ def modifyProduct():
             print("\n!!!!! Please enter the valid option !!!!!\n")
 
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\nModified the mentioned values!\n")
+    print("\n>>>>>>>> Modified the mentioned values. <<<<<<<<\n")
 
 # FUNCTIONS FOR THE SUB MENU
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
