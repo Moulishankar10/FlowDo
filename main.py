@@ -18,7 +18,6 @@ import matplotlib.pyplot as plt
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
     print("\n*************************************** MAIN MENU ********************************************\n")
-    print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new order")
     print("Press 2 for displaying the revenue options.")
     print("Press 3 for displaying the inventory options.")
@@ -28,7 +27,6 @@ def mainOptionsVisualizer():
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
     print("\n************************************* ORDER MENU *********************************************\n")
-    print("Press 0 for viewing the options again.")
     print("Press 1 for Adding a new product.")
     print("Press 2 for Removing a product.")
     print("Press 3 for viewing the bill.")
@@ -40,7 +38,6 @@ def orderOptionsVisualizer():
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
     print("\n************************************ REVENUE MENU ********************************************\n")
-    print("Press 0 for viewing the options again.")
     print("Press 1 for viewing this month's total revenue.")
     print("Press 2 for viewing the product which generated the maximum profit this month.")
     print("Press 3 for viewing the product which generated the minimum profit this month.")
@@ -51,7 +48,6 @@ def revenueOptionsVisualizer():
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
     print("\n************************************* INVENTORY MENU *****************************************\n")
-    print("Press 0 for viewing the options again.")
     print("Press 1 for viewing your inventory.")
     print("Press 2 for Adding a new product to your inventory.")
     print("Press 3 for Removing a product from your inventory.")
@@ -145,7 +141,7 @@ class Biller:
             print("\nSorry! It is an empty bill.")
         else:
             ind = self.prod_name.index(ele.upper())
-            key = int(input("\nPress 0 for modifying the product name ..... \nPress 1 for modifying the quantity .....\n\nYour Option : "))
+            key = int(input("\nPress 0 to modify the product name ..... \nPress 1 to modify the quantity .....\n\nYour Option : "))
             if key == 0:
                 self.prod_name[ind] = input("\nEnter the new product name : ").upper()
             elif key == 1:
@@ -267,21 +263,20 @@ def modifyProduct():
     print("Press 3 to modify Available Stock.")
     print("Press 4 to modify Maximum Stock")
     print("Press 5 to modify Cost Price.")
-    print("Press 6 for modifying Selling Price.")
-    print("Press 9 for exit.\n")  
-    option = int(input("Enter your Option: "))
+    print("Press 6 for modifying Selling Price.\n")
+    option = int(input("Enter your Option : "))
     if option == 1:
-        inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product: ")
+        inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product : ")
     elif option == 2:
-        inv_data["Product_Name"][ind] = input("\nEnter the new Product Name for this product: ").upper()
+        inv_data["Product_Name"][ind] = input("\nEnter the new Product Name for this product : ").upper()
     elif option == 3:
-        inv_data["Available_Stock"][ind] = int(input("\nEnter the new value for Available Stock: "))
+        inv_data["Available_Stock"][ind] = int(input("\nEnter the new value for Available Stock : "))
     elif option == 4:
-        inv_data["Maximum_Stock"][ind] = int(input("\nEnter the new value for Maximum Stock: "))
+        inv_data["Maximum_Stock"][ind] = int(input("\nEnter the new value for Maximum Stock : "))
     elif option == 5:
-        inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price: "))
+        inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price : "))
     elif option == 6:
-        inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Price: "))
+        inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Pric e: "))
 
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\nModified the mentioned values!")
