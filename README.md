@@ -17,4 +17,8 @@ FlowDo is a application created for the purpose of managing business activities 
 
 2. Move the terminal directory inside the FlowDo folder.
 
-3. Type '''pip install -r requirements.txt''' to install any missing packages.
+3. Type 'pip install -r requirements.txt' to install any missing packages.
+
+4. Run main.py in your terminal
+
+5. When using the software for the first time, the user should modify the products and their properties on the inventory.csv and revenue.csv in data folder either by manually modifying values or by using inventory editing options in the software.
