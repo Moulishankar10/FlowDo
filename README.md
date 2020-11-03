@@ -13,7 +13,7 @@ FlowDo is a application created for the purpose of managing business activities 
 
 ## To Use:
 
-1. Clone the repository to your machine. 
+1. Download the repository to your machine. 
 
 2. Move the terminal directory inside the FlowDo folder.
 
