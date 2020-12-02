@@ -277,47 +277,55 @@ def addProdInventory():
 def removeProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     prod_name = input("\nEnter the product name to remove : ").upper()
-    for i in range(len(inv_data)):
-        if inv_data["Product_Name"][i] == prod_name:
-            ind = i
-    inv_data.drop([ind],axis = 0,inplace = True)
-    inv_data.to_csv("data/inventory.csv",index=False)
-    print("\n>>>>>>>> Product is Removed from the Inventory. <<<<<<<<\n")
+    if prod_name in inv_data["Product_Name"]:
+        for i in range(len(inv_data)):
+            if inv_data["Product_Name"][i] == prod_name:
+                ind = i
+        inv_data.drop([ind],axis = 0,inplace = True)
+        inv_data.to_csv("data/inventory.csv",index=False)
+        print("\n>>>>>>>> Product is Removed from the Inventory. <<<<<<<<\n")
+    else:
+        print("\nThe Specified Product is not in the Inventory\n")
+
             
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
     inv_data = pd.read_csv("data/inventory.csv")
     prod_name = input("\nEnter the product name to modify : ").upper()
-    for i in range(len(inv_data)):
-        if inv_data["Product_Name"][i] == prod_name:
-            ind = i
-    print("\n--------------------------------------------\n")
-    print("\nPress 1 to modify Product Code.")
-    print("\nPress 2 to modify Product Name.")
-    print("\nPress 3 to modify Available Stock.")
-    print("\nPress 4 to modify Maximum Stock")
-    print("\nPress 5 to modify Cost Price.")
-    print("\nPress 6 for modifying Selling Price.\n")
-    print("\n--------------------------------------------\n")
+    if prod_name in inv_data["Product_Name"]:
+        for i in range(len(inv_data)):
+            if inv_data["Product_Name"][i] == prod_name:
+                ind = i
+        print("\n--------------------------------------------\n")
+        print("\nPress 1 to modify Product Code.")
+        print("\nPress 2 to modify Product Name.")
+        print("\nPress 3 to modify Available Stock.")
+        print("\nPress 4 to modify Maximum Stock")
+        print("\nPress 5 to modify Cost Price.")
+        print("\nPress 6 for modifying Selling Price.\n")
+        print("\n--------------------------------------------\n")
 
-    option = int(input("\nEnter your Option : "))
-    if option == 1:
-        inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product : ")
-    elif option == 2:
-        inv_data["Product_Name"][ind] = input("\nEnter the new Product Name for this product : ").upper()
-    elif option == 3:
-        inv_data["Available_Stock"][ind] = int(input("\nEnter the new value for Available Stock : "))
-    elif option == 4:
-        inv_data["Maximum_Stock"][ind] = int(input("\nEnter the new value for Maximum Stock : "))
-    elif option == 5:
-        inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price : "))
-    elif option == 6:
-        inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Pric e: "))
-    elif option not in [1,2,3,4,5,6]:
-            print("\n!!!!! Please enter the valid option !!!!!\n")
+        option = int(input("\nEnter your Option : "))
+        if option == 1:
+            inv_data["Product_Code"][ind] = input("\nEnter the new Product Code for this product : ")
+        elif option == 2:
+            inv_data["Product_Name"][ind] = input("\nEnter the new Product Name for this product : ").upper()
+        elif option == 3:
+            inv_data["Available_Stock"][ind] = int(input("\nEnter the new value for Available Stock : "))
+        elif option == 4:
+            inv_data["Maximum_Stock"][ind] = int(input("\nEnter the new value for Maximum Stock : "))
+        elif option == 5:
+            inv_data["Cost_Price"][ind] = int(input("\nEnter the new value for Cost Price : "))
+        elif option == 6:
+            inv_data["Selling_Price"][ind] = int(input("\nEnter the new value for Selling Pric e: "))
+        elif option not in [1,2,3,4,5,6]:
+                print("\n!!!!! Please enter the valid option !!!!!\n")
 
-    inv_data.to_csv("data/inventory.csv",index=False)
-    print("\n>>>>>>>> Modified the mentioned values. <<<<<<<<\n")
+        inv_data.to_csv("data/inventory.csv",index=False)
+        print("\n>>>>>>>> Modified the mentioned values. <<<<<<<<\n")
+    else:
+        print("\nThe Specified Product is not in the Inventory\n")
+
 
 # FUNCTIONS FOR THE SUB MENU
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
