@@ -27,4 +27,5 @@ else
 fi
 
 pip3 install numpy pandas datetime matplotlib
-python3 main.py
+
+echo "Now, You are all set!"
