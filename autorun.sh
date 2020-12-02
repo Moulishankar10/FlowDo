@@ -2,7 +2,7 @@
 
 clear
 
-echo "FlowDo Autorun Script for Linux"
+echo "FlowDo Autorun Script"
 echo ""
 echo "Checking for Python Installation..."
 
@@ -26,6 +26,7 @@ else
   echo "Successfully installed pip3."
 fi
 
+echo "Checking the Dependencies...."
 pip3 install numpy pandas datetime matplotlib
 
 echo "Now, You are all set!"
