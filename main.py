@@ -198,7 +198,7 @@ class Biller:
                     frmt = "{}-{}".format(today.month,today.year)
                     rev_data[str(frmt)][i]+=self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
-        print("\nData Updated ! ")
+        print("\n ---- Updated the Inventory Data! ---- \n")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 
