@@ -364,6 +364,7 @@ def Order():
                 pass
             elif key == "N" or key == "n":
                 b.postProcessor()
+            print("\n                |||||  Thanks for the Order |||||                \n")
         
         elif order_option == 9:
             break
