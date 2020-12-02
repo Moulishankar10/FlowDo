@@ -1,5 +1,7 @@
 #!/bin/sh
 
+clear
+
 echo "FlowDo Autorun Script for Linux"
 echo ""
 echo "Checking for Python Installation..."
