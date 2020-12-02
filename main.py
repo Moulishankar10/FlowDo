@@ -177,9 +177,10 @@ class Biller:
                     self.prod_name[ind] = input("\nEnter the new product name : ").upper()
                 elif key == 1:
                     self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
+                print("\n>>>>>>>> Updated the Order. <<<<<<<<\n")
             else:
                 print("\nThe Specified Product is not in the Bill\n")
-        print("\n>>>>>>>> Modified the mentioned value in the Order. <<<<<<<<\n")
+        
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
         today = datetime.today()
@@ -322,7 +323,7 @@ def modifyProduct():
                 print("\n!!!!! Please enter the valid option !!!!!\n")
 
         inv_data.to_csv("data/inventory.csv",index=False)
-        print("\n>>>>>>>> Modified the mentioned values. <<<<<<<<\n")
+        print("\n>>>>>>>> Updated the Inventory. <<<<<<<<\n")
     else:
         print("\nThe Specified Product is not in the Inventory\n")
 
