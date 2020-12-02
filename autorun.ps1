@@ -1,4 +1,4 @@
-Write-Output "FlowDo Autorun Script for Windows"
+Write-Output "FlowDo Autorun Script"
 Write-Output "Checking the Dependencies...."
 
 pip install numpy
