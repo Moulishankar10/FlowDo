@@ -148,7 +148,7 @@ class Biller:
                 self.rear -= 1
                 print("\n>>>>>>>> Product is Removed from the Order. <<<<<<<<\n")
             else:
-                print("\nThe Specified Product is not in the Bill\n")
+                print("\n!!!! The Specified Product is not in the Bill !!!!\n")
 
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
@@ -179,7 +179,7 @@ class Biller:
                     self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
                 print("\n>>>>>>>> Updated the Order. <<<<<<<<\n")
             else:
-                print("\nThe Specified Product is not in the Bill\n")
+                print("\n!!!! The Specified Product is not in the Bill !!!!\n")
         
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
@@ -286,7 +286,7 @@ def removeProdInventory():
         inv_data.to_csv("data/inventory.csv",index=False)
         print("\n>>>>>>>> Product is Removed from the Inventory. <<<<<<<<\n")
     else:
-        print("\nThe Specified Product is not in the Inventory\n")
+        print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
             
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
@@ -325,7 +325,7 @@ def modifyProduct():
         inv_data.to_csv("data/inventory.csv",index=False)
         print("\n>>>>>>>> Updated the Inventory. <<<<<<<<\n")
     else:
-        print("\nThe Specified Product is not in the Inventory\n")
+        print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
 
 # FUNCTIONS FOR THE SUB MENU
