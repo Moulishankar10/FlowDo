@@ -210,7 +210,7 @@ def viewMonthRevenue():
 def maxProfit():
     today = datetime.today()
     rev_data = pd.read_csv('data/revenue.csv')
-    frmt = "{}-{}".format(today.month,today.year)
+    frmt = "{today.month}-{today.year}"
     max_amt = max(list(rev_data[frmt]))
     print("\nThe following product(s) generated the maximum profit : \n")
     for i in range(len(rev_data)):
@@ -221,7 +221,7 @@ def maxProfit():
 def minProfit():
     today = datetime.today()
     rev_data = pd.read_csv('data/revenue.csv')
-    frmt = "{}-{}".format(today.month,today.year)
+    frmt = "{today.month}-{today.year}"
     min_amt = min(list(rev_data[frmt]))
     print("\nThe following product(s) generated the least profit : \n")
     for i in range(len(rev_data)):
