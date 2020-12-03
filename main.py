@@ -442,22 +442,22 @@ if __name__ == "__main__":
     while True:
         mainOptionsVisualizer()
         option = input("\nEnter your option : ")
+        
         if option not in '1239':
             print("\n!!!!! Please enter the valid option !!!!!\n")
-        opt = int(option)
-        if option == 1:
-            Order()
             
-        elif option == 2:
-            Revenue()
-            
-        elif option == 3:
-            Inventory()
-            
-        elif option == 9:
-            break
-        
-        elif option not in [1,2,3]:
-            print("\n!!!!! Please enter the valid option !!!!!\n")
+        else:
+            opt = int(option)
 
+            if opt == 1:
+                Order()
+                
+            elif opt == 2:
+                Revenue()
+                
+            elif opt == 3:
+                Inventory()
+                
+            elif opt == 9:
+                break
             
