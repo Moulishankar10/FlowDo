@@ -465,5 +465,9 @@ if __name__ == "__main__":
                 Inventory()
                 
             elif opt == 9:
-                break
+                final_opt = input("Do you really want to exit FlowDo (Y/N): ")
+                if final_opt == "Y" or "y":
+                    break
+                
+
             
