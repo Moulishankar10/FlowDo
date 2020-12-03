@@ -217,15 +217,15 @@ def viewMonthRevenue():
 # FUNCTION TO DISPLAY THE MAXIMUM PROFIT GENERATED PRODUCTS 
 def maxProfit():
     rev_data = pd.read_csv('data/revenue.csv')
-    max_amt = max(list(rev_data[frmt]))
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         print(f"\nThe following product(s) generated the maximum profit in {frmt} : \n")
         for i in range(len(rev_data)):
             if rev_data[frmt][i] == max_amt:
-                print(f"{rev_data["Product_Name"][i]}   - Rs.{max_amt}")
+                max_amt = max(list(rev_data[frmt]))
+                print("{}   - Rs.{}".format(rev_data["Product_Name"][i],max_amt))
     else:
-        print("!!!! Invalid Time Period or Non-Entried Time Period !!!!")
+        print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
 # FUNCTION TO DISPLAY THE MINIMUM PROFIT GENERATED PRODUCTS
 def minProfit():
