@@ -134,7 +134,7 @@ class Biller:
             else:
                 flag += 1
         if flag != 0:
-            print("\nSorry for the inconvenience! Your required product is either in Out of Stock or Not in our Stock.")
+            print("\n!! Sorry for the inconvenience.. Your required product is either in Out of Stock or Not in our Stock !!")
 
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
