@@ -15,9 +15,9 @@ FlowDo is a application created for the purpose of managing business activities 
 
 1. Download the repository to your machine. 
 
-2. Move the terminal directory inside the FlowDo folder.
+2. If you are on Linux/Mac Os, then move the terminal directory inside the FlowDo folder and run the command 'bash autorun.sh' which installs all the required packages.
 
-3. Type 'pip install -r requirements.txt' to install any missing packages.
+3. If you are on Windows, then run the powershell script 'autorun.ps1' which installs all the required packages.
 
 4. Run main.py
 
