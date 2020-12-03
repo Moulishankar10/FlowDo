@@ -380,39 +380,43 @@ def Revenue():
     
     while True:
         revenueOptionsVisualizer()
-        rev_opt = int(input("\nEnter your option : "))
-        if rev_opt == 1:
-            viewMonthRevenue()
-        elif rev_opt == 2:
-            maxProfit()
-        elif rev_opt == 3:
-            minProfit()
-        elif rev_opt == 4:
-            viewRevenueGraph()
-        elif rev_opt == 9:
-            break
-        elif rev_opt not in [1,2,3,4]:
+        option = input("\nEnter your option : ")
+        if option not in '12349':
             print("\n!!!!! Please enter the valid option !!!!!\n")
+        else:
+            rev_opt = int(option)
+            if rev_opt == 1:
+                viewMonthRevenue()
+            elif rev_opt == 2:
+                maxProfit()
+            elif rev_opt == 3:
+                minProfit()
+            elif rev_opt == 4:
+                viewRevenueGraph()
+            elif rev_opt == 9:
+                break
         
 # Inventory() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE INVENTORY LIST TO PERFORM IT'S REALTED FUNCTIONS.
 def Inventory():
     # SUB FUNCTIONS SHOULD BE ADDED
     while True:
         inventoryOptionsVisualizer()
-        inv_opt = int(input("\nEnter your option : "))
-        if inv_opt == 1:
-            viewInventory()
-        elif inv_opt == 2:
-            addProdInventory()
-        elif inv_opt == 3:
-            removeProdInventory()
-        elif inv_opt == 4:
-            modifyProduct()
-        elif inv_opt == 9:
-            break
-        elif inv_opt not in [1,2,3,4]:
+        option = input("\nEnter your option : ")
+        if option not in '12349':
             print("\n!!!!! Please enter the valid option !!!!!\n")
-            
+        else:
+            inv_opt = int(option)
+            if inv_opt == 1:
+                viewInventory()
+            elif inv_opt == 2:
+                addProdInventory()
+            elif inv_opt == 3:
+                removeProdInventory()
+            elif inv_opt == 4:
+                modifyProduct()
+            elif inv_opt == 9:
+                break
+
 # MAIN FUNCTION
 if __name__ == "__main__":
     
