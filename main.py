@@ -466,8 +466,10 @@ if __name__ == "__main__":
                 
             elif opt == 9:
                 final_opt = input("Do you really want to exit FlowDo (Y/N): ")
-                if final_opt == "Y" or "y":
+                if final_opt == "Y" or final_opt == "y":
                     break
+                else: 
+                    continue
                 
 
             
