@@ -172,7 +172,7 @@ class Biller:
         else:
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele.upper())
-                key = int(input("\nPress 0 to modify the product name ..... \nPress 1 to modify the quantity .....\n\nYour Option : "))
+                key = int(input("\n                 Press 0 to modify the product name ..... \n\n                 Press 1 to modify the quantity .....\n\nYour Option : "))
                 if key == 0:
                     self.prod_name[ind] = input("\nEnter the new product name : ").upper()
                 elif key == 1:
@@ -184,7 +184,7 @@ class Biller:
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
         today = datetime.today()
-        frmt = "{today.month}-{today.year}"
+        frmt = f"{today.month}-{today.year}"
         inv_data = pd.read_csv('data/inventory.csv')
         rev_data = pd.read_csv("data/revenue.csv")
 
@@ -345,41 +345,42 @@ def Order():
     
     while True:
         orderOptionsVisualizer()
-        order_option = int(input("Enter your option : "))
-
-        if order_option == 1:
-            ele = input("\nEnter the product name : ").upper()
-            qn = int(input("\nEnter the quantity : "))
-            b.enqueue(ele,qn)
-            
-        elif order_option == 2:
-            ele = input("\nEnter the product name : ").upper()
-            b.remove(ele)
-            
-        elif order_option == 3:
-            print("\n----------------------- BILL --------------------------\n")
-            b.display()
-        
-        elif order_option == 4:
-            ele = input("\nEnter the product name : ").upper()
-            b.modify(ele)
-        
-        elif order_option == 5:
-            print("\n-------------------- YOUR FINAL BILL ------------------\n")
-            b.display()
-            print("---------------------------------------------------------\n")
-            key = input("\nDo you want to make any changes? (Y/N) : ")
-            if key == "Y" or key == "y":
-                pass
-            elif key == "N" or key == "n":
-                b.postProcessor()
-            print("\n                |||||  Thanks for the Order |||||                \n")
-        
-        elif order_option == 9:
-            break
-
-        elif order_option not in [1,2,3,4,5]:
+        option = input("Enter your option : ")
+        if option not in '123459':
             print("\n!!!!! Please enter the valid option !!!!!\n")
+        else:
+            order_opt = int(option)
+            if order_opt == 1:
+                ele = input("\nEnter the product name : ").upper()
+                qn = int(input("\nEnter the quantity : "))
+                b.enqueue(ele,qn)
+                
+            elif order_opt == 2:
+                ele = input("\nEnter the product name : ").upper()
+                b.remove(ele)
+                
+            elif order_opt == 3:
+                print("\n----------------------- BILL --------------------------\n")
+                b.display()
+            
+            elif order_opt == 4:
+                ele = input("\nEnter the product name : ").upper()
+                b.modify(ele)
+            
+            elif order_opt == 5:
+                print("\n-------------------- YOUR FINAL BILL ------------------\n")
+                b.display()
+                print("---------------------------------------------------------\n")
+                key = input("\nDo you want to make any changes? (Y/N) : ")
+                if key == "Y" or key == "y":
+                    pass
+                elif key == "N" or key == "n":
+                    b.postProcessor()
+                print("\n                                |||||  Thanks for the Order |||||                \n")
+            
+            elif order_opt == 9:
+                break
+
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def Revenue():
