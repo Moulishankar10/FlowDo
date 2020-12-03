@@ -441,8 +441,10 @@ if __name__ == "__main__":
     revMonthChecker()
     while True:
         mainOptionsVisualizer()
-        option = int(input("\nEnter your option : "))
-            
+        option = input("\nEnter your option : ")
+        if option not in '1239':
+            print("\n!!!!! Please enter the valid option !!!!!\n")
+        opt = int(option)
         if option == 1:
             Order()
             
