@@ -18,7 +18,7 @@ import matplotlib.pyplot as plt
 # LIST OF KEYMAPS TO BE DISPLAYED IN MAIN MENU
 def mainOptionsVisualizer():
     print("""
-        \n****************************************** MAIN MENU *********************************************\n
+        \n******************************************** MAIN MENU ***********************************************\n
                                 Press 1 for Adding a new order.
 
                                 Press 2 for displaying the revenue options.
@@ -26,13 +26,13 @@ def mainOptionsVisualizer():
                                 Press 3 for displaying the inventory options.
 
                                 Press 9 for exit.
-        \n**************************************************************************************************\n
+        \n******************************************************************************************************\n
     """)
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN ORDER OPTIONS
 def orderOptionsVisualizer():
     print("""
-        \n****************************************** ORDER MENU *********************************************\n
+        \n******************************************** ORDER MENU **********************************************\n
                                 Press 1 for Adding a new product.
 
                                 Press 2 for Removing a product.
@@ -44,13 +44,13 @@ def orderOptionsVisualizer():
                                 Press 5 to proceed your order.
 
                                 Press 9 for exit.
-        \n**************************************************************************************************\n
+        \n******************************************************************************************************\n
     """)
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN REVENUE OPTIONS
 def revenueOptionsVisualizer():
     print("""
-        \n****************************************** ORDER MENU *********************************************\n
+        \n******************************************* REVENUE MENU *********************************************\n
                 Press 1 for viewing a month's total revenue.
 
                 Press 2 for viewing the product which generated the maximum profit in a month.
@@ -60,14 +60,14 @@ def revenueOptionsVisualizer():
                 Press 4 for viewing the revenue graph.
 
                 Press 9 for exit.
-        \n**************************************************************************************************\n
+        \n******************************************************************************************************\n
     """)
     
 
 # LIST OF KEYMAPS TO BE DISPLAYED IN INVENTORY OPTIONS
 def inventoryOptionsVisualizer():
     print("""
-        \n****************************************** ORDER MENU *********************************************\n
+        \n****************************************** INVENTORY MENU *********************************************\n
                                 Press 1 for viewing your inventory.
 
                                 Press 2 for Adding a new product to your inventory.
@@ -77,7 +77,7 @@ def inventoryOptionsVisualizer():
                                 Press 4 to modify the properties of existing products.
 
                                 Press 9 for exit.
-        \n****************************************************************************************************\n
+        \n*******************************************************************************************************\n
     """)
 
 # USED TO CHECK IF THE COLUMN FOR THE MONTH IS CREATED OR NOT
@@ -210,7 +210,7 @@ def viewMonthRevenue():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         month_revenue = sum(list(rev_data[frmt]))
-        print(f"\nThe revenue generated in {frmt} >> Rs.{month_revenue}")
+        print(f"\n                                    The revenue generated in {frmt} -- Rs.{month_revenue}")
     else:
         print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
@@ -220,10 +220,10 @@ def maxProfit():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         max_amt = max(list(rev_data[frmt]))
-        print(f"\nThe following product(s) generated the maximum profit in {frmt} : \n")
+        print(f"\n                           The following product(s) generated the maximum profit in {frmt} : \n")
         for i in range(len(rev_data)):
             if rev_data[frmt][i] == max_amt:
-                print("  * {}   -   Rs.{}".format(rev_data["Product_Name"][i],max_amt))
+                print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],max_amt))
     else:
         print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
@@ -233,10 +233,10 @@ def minProfit():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         min_amt = min(list(rev_data[frmt]))
-        print(f"\nThe following product(s) generated the least profit in {frmt}: \n")
+        print(f"\n                             The following product(s) generated the least profit in {frmt}: \n")
         for i in range(len(rev_data)):
             if rev_data[frmt][i] == min_amt:
-                print("  * {}   -   Rs.{}".format(rev_data["Product_Name"][i],min_amt))
+                print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],min_amt))
     else:
         print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
