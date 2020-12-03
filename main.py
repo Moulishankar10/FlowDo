@@ -123,7 +123,7 @@ class Biller:
         for i in range(len(inv_data)):
             flag = 0
             if inv_data["Product_Name"][i]==ele.upper():
-                if qn<=inv_data["Available_Stock"][i]:
+                if qn <= inv_data["Available_Stock"][i]:
                     self.prod_name.append(ele.upper())
                     self.quantity.append(qn)
                     self.price.append(inv_data["Selling_Price"][i])
@@ -472,7 +472,7 @@ if __name__ == "__main__":
                 Inventory()
                 
             elif opt == 9:
-                final_opt = input("Do you really want to exit FlowDo (Y/N): ")
+                final_opt = input("\nDo you really want to exit FlowDo (Y/N) : ")
                 if final_opt == "Y" or final_opt == "y":
                     break
                 else: 
