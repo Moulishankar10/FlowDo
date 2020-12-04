@@ -136,7 +136,7 @@ class Biller:
                 else:
                     flag2 = 1
             else:
-                flag1 += 2
+                flag1 += 1
         if flag1 != 0:
             print("\n!! Sorry for the inconvenience... Your required product is either Out of Stock or Not in our Stock !!")
         if flag2 != 0:
