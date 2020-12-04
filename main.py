@@ -352,8 +352,11 @@ def Order():
             order_opt = int(option)
             if order_opt == 1:
                 ele = input("\nEnter the product name : ").upper()
-                qn = int(input("\nEnter the quantity : "))
-                b.enqueue(ele,qn)
+                qn = input("\nEnter the quantity : ")
+                if qn.isnumeric() == False:
+                    print("\n!! Invalid Amount of Quantity !!")
+                else:
+                    b.enqueue(ele,int(qn))
                 
             elif order_opt == 2:
                 ele = input("\nEnter the product name : ").upper()
