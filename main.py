@@ -119,22 +119,28 @@ class Biller:
             else:
                 self.rear += 1
         inv_data = pd.read_csv('data/inventory.csv')
-        flag = 0
+        flag1 = 0
+        flag2 = 0
         for i in range(len(inv_data)):
-            flag = 0
+            flag1 = 0
             if inv_data["Product_Name"][i]==ele.upper():
-                if qn <= inv_data["Available_Stock"][i]:
-                    self.prod_name.append(ele.upper())
-                    self.quantity.append(qn)
-                    self.price.append(inv_data["Selling_Price"][i])
-                    print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
-                    break
+                if qn.isnumeric() == True:
+                    if int(qn) <= inv_data["Available_Stock"][i]:
+                        self.prod_name.append(ele.upper())
+                        self.quantity.append(qn)
+                        self.price.append(inv_data["Selling_Price"][i])
+                        print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
+                        break
+                    else:
+                        flag1 += 1
                 else:
-                    flag += 1
+                    flag2 = 1
             else:
-                flag += 1
-        if flag != 0:
-            print("\n!! Sorry for the inconvenience.. Your required product is either in Out of Stock or Not in our Stock !!")
+                flag1 += 2
+        if flag1 != 0:
+            print("\n!! Sorry for the inconvenience... Your required product is either Out of Stock or Not in our Stock !!")
+        if flag2 != 0:
+            print("\n!! Invalid Amount of Quantity !!")
 
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
@@ -353,10 +359,7 @@ def Order():
             if order_opt == 1:
                 ele = input("\nEnter the product name : ").upper()
                 qn = input("\nEnter the quantity : ")
-                if qn.isnumeric() == False:
-                    print("\n!! Invalid Amount of Quantity !!")
-                else:
-                    b.enqueue(ele,int(qn))
+                b.enqueue(ele,qn)
                 
             elif order_opt == 2:
                 ele = input("\nEnter the product name : ").upper()
