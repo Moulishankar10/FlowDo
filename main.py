@@ -114,33 +114,32 @@ class Biller:
         if self.isFull():
             print("\nMaximum limit reached !")
         else:
-            if self.front==None and self.rear==None:
-                self.front=self.rear=0
-            else:
-                self.rear += 1
-        inv_data = pd.read_csv('data/inventory.csv')
-        flag1 = 0
-        flag2 = 0
-        for i in range(len(inv_data)):
+            inv_data = pd.read_csv('data/inventory.csv')
             flag1 = 0
-            if inv_data["Product_Name"][i]==ele.upper():
-                if qn.isnumeric() == True:
-                    if int(qn) <= inv_data["Available_Stock"][i]:
-                        self.prod_name.append(ele.upper())
-                        self.quantity.append(qn)
-                        self.price.append(inv_data["Selling_Price"][i])
-                        print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
-                        break
+            flag2 = 0
+            for i in range(len(inv_data)):
+                if inv_data["Product_Name"][i]==ele.upper():
+                    if qn.isnumeric() == True:
+                        if int(qn) <= inv_data["Available_Stock"][i]:
+                            self.prod_name.append(ele.upper())
+                            self.quantity.append(int(qn))
+                            self.price.append(inv_data["Selling_Price"][i])
+                            if self.front==None and self.rear==None:
+                                self.front=self.rear=0
+                            else:
+                                self.rear += 1
+                            print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
+                            break
+                        else:
+                            flag1 += 1
                     else:
-                        flag1 += 1
+                        flag2 = 1
                 else:
-                    flag2 = 1
-            else:
-                flag1 += 1
-        if flag1 != 0:
-            print("\n!! Sorry for the inconvenience... Your required product is either Out of Stock or Not in our Stock !!")
-        if flag2 != 0:
-            print("\n!! Invalid Amount of Quantity !!")
+                    flag1 += 1
+            if flag1 != 0 and flag2 == 0:
+                print("\n!! Sorry for the inconvenience... Your required product is either Out of Stock or Not in our Stock !!")
+            if flag2 != 0:
+                print("\n!! Invalid Amount of Quantity !!")
 
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
