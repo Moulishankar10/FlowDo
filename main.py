@@ -118,6 +118,7 @@ class Biller:
             flag1 = 0
             flag2 = 0
             for i in range(len(inv_data)):
+                flag1 = flag2 =  0
                 if inv_data["Product_Name"][i]==ele.upper():
                     if qn.isnumeric() == True:
                         if int(qn) <= inv_data["Available_Stock"][i]:
@@ -136,7 +137,7 @@ class Biller:
                         flag2 = 1
                 else:
                     flag1 += 1
-            if flag1 != 0 and flag2 == 0:
+            if flag1 != 0:
                 print("\n!! Sorry for the inconvenience... Your required product is either Out of Stock or Not in our Stock !!")
             if flag2 != 0:
                 print("\n!! Invalid Amount of Quantity !!")
