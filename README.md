@@ -20,7 +20,7 @@ FlowDo is a application created for the purpose of managing business activities 
         ```bash
         bash autorun.sh
         ```
-
+        
 3. If you are on Windows, then run the powershell script 'autorun.ps1' which installs all the required packages.
 
 4. Run main.py
