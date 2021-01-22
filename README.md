@@ -17,9 +17,9 @@ FlowDo is a application created for the purpose of managing business activities 
 
 2. If you are on Linux/Mac Os, then move the terminal directory to the FlowDo folder and run the following command to install all the required packages.
 
-```bash
-bash autorun.sh
-```
+        ```bash
+        bash autorun.sh
+        ```
 
 3. If you are on Windows, then run the powershell script 'autorun.ps1' which installs all the required packages.
 
