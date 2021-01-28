@@ -381,15 +381,18 @@ def Order():
                 b.modify(ele)
             
             elif order_opt == 5:
-                print("\n-------------------- YOUR FINAL BILL ------------------\n")
-                b.display()
-                print("---------------------------------------------------------\n")
-                key = input("\nDo you want to make any changes? (Y/N) : ")
-                if key == "Y" or key == "y":
-                    pass
-                elif key == "N" or key == "n":
-                    b.postProcessor()
-                print("\n                                |||||  Thanks for the Order |||||                \n")
+                if b.isEmpty():
+                    print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
+                else:
+                    print("\n-------------------- YOUR FINAL BILL ------------------\n")
+                    b.display()
+                    print("---------------------------------------------------------\n")
+                    key = input("\nDo you want to make any changes? (Y/N) : ")
+                    if key == "Y" or key == "y":
+                        pass
+                    elif key == "N" or key == "n":
+                        b.postProcessor()
+                    print("\n                                |||||  Thanks for the Order |||||                \n")
             
             elif order_opt == 9:
                 break
