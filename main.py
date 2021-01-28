@@ -401,7 +401,6 @@ def Order():
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def Revenue():
     # SUB FUNCTIONS SHOULD BE ADDED
-    
     while True:
         revenueOptionsVisualizer()
         option = input("\nEnter your option : ")
