@@ -370,8 +370,11 @@ def Order():
                 b.remove(ele)
                 
             elif order_opt == 3:
-                print("\n----------------------- BILL --------------------------\n")
-                b.display()
+                if b.isEmpty():
+                    print("\n!!! Sorry, It is an Empty Bill !!!\n")
+                else:
+                    print("\n----------------------- BILL --------------------------\n")
+                    b.display()
             
             elif order_opt == 4:
                 ele = input("\nEnter the product name : ").upper()
