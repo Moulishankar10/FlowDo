@@ -144,7 +144,7 @@ class Biller:
                 else:
                     flag = 1
             if flag == 1:
-                print("The requested item is not in the inventory or invalid.")
+                print("\n!! Unavailable Product or Invalid Product !!")
 
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
