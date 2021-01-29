@@ -352,7 +352,7 @@ def modifyProduct():
 def Order():
     l = int(input("\nEnter the number of products : "))
     b = Biller(l)
-    
+    today = datetime.today()
     while True:
         orderOptionsVisualizer()
         option = input("Enter your option : ")
@@ -373,7 +373,10 @@ def Order():
                 if b.isEmpty():
                     print("\n!!! Sorry, It is an Empty Bill !!!\n")
                 else:
-                    print("\n----------------------- BILL --------------------------\n")
+                    print("\n=========================================================\n")
+                    print(f"Bill Date : {today.day}-{today.month}-{today.year}")
+                    print("\n=========================================================\n")
+                    print("\n------------------------- BILL --------------------------\n")
                     b.display()
             
             elif order_opt == 4:
