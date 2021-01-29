@@ -171,9 +171,9 @@ class Biller:
             res = pd.DataFrame(form)
             res.index=list(range(1,len(self.prod_name)+1))
             print(res)
-            print("\n=======================================================\n")
+            print("\n=========================================================\n")
             print("Grand Total           :  Rs.",sum(self.total_price))
-            print("\n=======================================================\n")
+            print("\n=========================================================\n")
 
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self,ele):
