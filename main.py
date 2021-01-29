@@ -387,6 +387,9 @@ def Order():
                 if b.isEmpty():
                     print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
                 else:
+                     print("\n=========================================================\n")
+                    print(f"Bill Date : {today.day}-{today.month}-{today.year}")
+                    print("\n=========================================================\n")
                     print("\n-------------------- YOUR FINAL BILL ------------------\n")
                     b.display()
                     print("---------------------------------------------------------\n")
