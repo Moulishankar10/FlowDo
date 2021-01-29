@@ -394,6 +394,7 @@ def Order():
                     b.display()
                     print("\n---------------------------------------------------------\n")
                     key = input("\nDo you want to make any changes? (Y/N) : ")
+                    print("\n")
                     if key == "Y" or key == "y":
                         pass
                     elif key == "N" or key == "n":
