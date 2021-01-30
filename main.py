@@ -389,7 +389,7 @@ def Order():
                 else:
                     print("\n-------------------- YOUR FINAL BILL ------------------\n")
                     print("\n=========================================================\n")
-                    print(f"Bill Date : {today.day}-{today.month}-{today.year}")
+                    print(f"Bill Date : {today.strftime("%d-%m-%Y")}")
                     print("\n=========================================================\n")
                     b.display()
                     print("\n---------------------------------------------------------\n")
