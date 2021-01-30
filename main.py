@@ -375,7 +375,7 @@ def Order():
                 else:
                     print("\n------------------------- BILL --------------------------\n")
                     print(f"Bill Date : {now.strftime('%d-%m-%Y     %I:%M %p')}")
-                    print("\n=========================================================\n")
+                    print("\n---------------------------------------------------------\n")
                     b.display()
             
             elif order_opt == 4:
@@ -386,10 +386,9 @@ def Order():
                 if b.isEmpty():
                     print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
                 else:
-                    print("\n-------------------- YOUR FINAL BILL ------------------\n")
-                    print("\n=========================================================\n")
+                    print("\n--------------------- YOUR FINAL BILL -------------------\n")
                     print(f"Bill Date : {now.strftime('%d-%m-%Y      %I:%M %p')}")
-                    print("\n=========================================================\n")
+                    print("\n---------------------------------------------------------\n")
                     b.display()
                     print("\n---------------------------------------------------------\n")
                     key = input("\nDo you want to make any changes? (Y/N) : ")
