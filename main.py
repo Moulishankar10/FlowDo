@@ -374,8 +374,7 @@ def Order():
                     print("\n!!! Sorry, It is an Empty Bill !!!\n")
                 else:
                     print("\n------------------------- BILL --------------------------\n")
-                    print("\n=========================================================\n")
-                    print(f"Bill Date : {now.strftime('%d-%m-%Y     %I:%M %p')}")
+                    print(f"\nBill Date : {now.strftime('%d-%m-%Y     %I:%M %p')}")
                     print("\n=========================================================\n")
                     b.display()
             
