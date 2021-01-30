@@ -394,7 +394,7 @@ def Order():
                     key = input("\nDo you want to make any changes? (Y/N) : ")
                     print("\n")
                     if key == "Y" or key == "y":
-                        pass
+                        continue
                     elif key == "N" or key == "n":
                         b.postProcessor()
                     print("\n                                |||||  Thanks for the Order |||||                \n")
