@@ -352,7 +352,7 @@ def modifyProduct():
 def Order():
     l = int(input("\nEnter the number of products : "))
     b = Biller(l)
-    today = datetime.today()
+    now = datetime.now()
     while True:
         orderOptionsVisualizer()
         option = input("Enter your option : ")
@@ -375,7 +375,7 @@ def Order():
                 else:
                     print("\n------------------------- BILL --------------------------\n")
                     print("\n=========================================================\n")
-                    print(f"Bill Date : {today.day}-{today.month}-{today.year}")
+                    print(f"Bill Date : {now.strftime(%d-%m-%Y\t%I:%M %p)}")
                     print("\n=========================================================\n")
                     b.display()
             
