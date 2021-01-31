@@ -149,7 +149,7 @@ class Biller:
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
     def remove(self,ele):
         if self.isEmpty():
-            print("\nSorry! It is an Empty Bill.")
+            print("\n!!! No Products are selected for the Order - Couldn't do Remove operation !!!\n")
         else:
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele)
@@ -158,7 +158,7 @@ class Biller:
                 self.rear -= 1
                 print("\n>>>>>>>> Product is Removed from the Order. <<<<<<<<\n")
             else:
-                print("\n!!!! The Specified Product is not in the Bill !!!!\n")
+                print("\n!!!! The Specified Product is not in the Order !!!!\n")
 
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
