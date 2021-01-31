@@ -362,7 +362,7 @@ def Order():
             print("\n---------------------------------------------------------\n")
             b.display()
             print("\n---------------------------------------------------------\n")
-            proceed.key = input("\nDo you want to make any changes? (Y/N) : ")
+            proceed.key = input("\nDo you want to make any changes? (y/n) : ")
             print("\n")
             
     
