@@ -158,7 +158,7 @@ class Biller:
                 self.rear -= 1
                 print("\n>>>>>>>> Product is Removed from the Order. <<<<<<<<\n")
             else:
-                print("\n!!!! The Specified Product is not in the Order !!!!\n")
+                print("\n!!! The Specified Product is not in the Order !!!\n")
 
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
@@ -178,7 +178,7 @@ class Biller:
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self,ele):
         if self.isEmpty():
-            print("\nSorry! It is an empty bill.")
+            print("\n!!! No Products are selected for the Order - Couldn't modify anything !!!\n")
         else:
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele.upper())
@@ -189,7 +189,7 @@ class Biller:
                     self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
                 print("\n>>>>>>>> Updated the Order. <<<<<<<<\n")
             else:
-                print("\n!!!! The Specified Product is not in the Bill !!!!\n")
+                print("\n!!! The Specified Product is not in the Order !!!\n")
         
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
