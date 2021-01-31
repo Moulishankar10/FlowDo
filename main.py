@@ -12,6 +12,7 @@ import pandas as pd
 from datetime import datetime
 import matplotlib.pyplot as plt
 
+
 # VISUALIZER FUNCTIONS:
 # Used to display keymaps for main menu and every submenu
 
@@ -349,10 +350,21 @@ def modifyProduct():
 
 # FUNCTIONS FOR THE SUB MENU
 # Order() - A FUNCTION WHICH PROVIDES THE ACCESSIBILITY TO THE CUSTOMER'S ORDER LIST TO PERFORM ALL THE ACTIONS.
+
 def Order():
     l = int(input("\nEnter the number of products : "))
     b = Biller(l)
     now = datetime.now()
+
+    def proceed():
+            print("\n--------------------- YOUR FINAL BILL -------------------\n")
+            print(f"Bill Date : {now.strftime('%d-%m-%Y      %I:%M %p')}")
+            print("\n---------------------------------------------------------\n")
+            b.display()
+            print("\n---------------------------------------------------------\n")
+            proceed.key = input("\nDo you want to make any changes? (Y/N) : ")
+            print("\n")
+            
     
     while True:
         orderOptionsVisualizer()
@@ -387,7 +399,7 @@ def Order():
                 if b.isEmpty():
                     print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
                 else:
-                    if len(b.quantity) == l:
+                    if len(b.quantity) != l:
                         print(f"\n!! You didn't ordered {l} number of products !!\n")
                         usr_res = input("Do you want to proceed the order (y/n) : ").lower()
                         if usr_res == 'y':
@@ -396,24 +408,17 @@ def Order():
                             continue    
                     else:
                         proceed()
+                    
+                    key = proceed.key
+                    if key == "Y" or key == "y":
+                        continue
+                    elif key == "N" or key == "n":
+                        b.postProcessor()
+                    print("\n                                |||||  Thanks for the Order |||||                \n")
 
             elif order_opt == 9:
                 break
         
-        def proceed():
-            print("\n--------------------- YOUR FINAL BILL -------------------\n")
-            print(f"Bill Date : {now.strftime('%d-%m-%Y      %I:%M %p')}")
-            print("\n---------------------------------------------------------\n")
-            b.display()
-            print("\n---------------------------------------------------------\n")
-            key = input("\nDo you want to make any changes? (Y/N) : ")
-            print("\n")
-            if key == "Y" or key == "y":
-                continue
-            elif key == "N" or key == "n":
-                b.postProcessor()
-            print("\n                                |||||  Thanks for the Order |||||                \n")
-
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
 def Revenue():
