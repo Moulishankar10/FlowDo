@@ -374,9 +374,12 @@ def Order():
         else:
             order_opt = int(option)
             if order_opt == 1:
-                ele = input("\nEnter the product name : ").upper()
-                qn = input("\nEnter the quantity : ")
-                b.enqueue(ele,qn)
+                if b.isFull():
+                    print("\n\n!!! Maximum Limit Reached !!!\n")
+                else:
+                    ele = input("\nEnter the product name : ").upper()
+                    qn = input("\nEnter the quantity : ")
+                    b.enqueue(ele,qn)
                 
             elif order_opt == 2:
                 ele = input("\nEnter the product name : ").upper()
