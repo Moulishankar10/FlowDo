@@ -403,8 +403,9 @@ def Order():
                     print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
                 else:
                     if len(b.quantity) != l:
-                        print(f"\n!! You didn't ordered {l} number of products !!\n")
+                        print(f"\n\n!! You didn't ordered {l} number of products !!\n\n")
                         usr_res = input("Do you want to proceed the order (y/n) : ").lower()
+                        print("\n")
                         if usr_res == 'y':
                             proceed()
                         else:
