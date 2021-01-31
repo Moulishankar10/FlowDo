@@ -163,7 +163,7 @@ class Biller:
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
         if self.isEmpty():
-            print("\nSorry! It is an Empty Bill.")
+            print("\n!!!Sorry, It's an Empty Bill !!!\n")
         else:
             self.total_price = list(np.array(self.quantity)*np.array(self.price))
             
