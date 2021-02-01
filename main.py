@@ -173,7 +173,9 @@ class Biller:
             res.index=list(range(1,len(self.prod_name)+1))
             print(res)
             print("\n=========================================================\n")
-            print("Grand Total           :  Rs.",sum(self.total_price))
+            print(f"Grand Total           :  Rs.{sum(self.total_price)}")
+            print(f"Total Items           :  {len(self.prod_name)}")
+            print(f"Total Quantities      :  {sum(self.quantity)}")
             print("\n=========================================================\n")
 
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
