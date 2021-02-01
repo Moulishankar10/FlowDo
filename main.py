@@ -362,7 +362,7 @@ def Order():
             print("\n---------------------------------------------------------\n")
             b.display()
             print("\n---------------------------------------------------------\n")
-            proceed.key = input("\nDo you want to make any changes? (y/n) : ")
+            proceed.key = input("\nDo you want to make any changes in the Order? (y/n) : ")
             print("\n")
             
     
@@ -514,7 +514,7 @@ if __name__ == "__main__":
                 Inventory()
                 
             elif opt == 9:
-                final_opt = input("\nDo you really want to exit FlowDo (Y/N) : ")
+                final_opt = input("\nDo you really want to exit FlowDo (y/n) : ")
                 if final_opt == "Y" or final_opt == "y":
                     break
                 else: 
