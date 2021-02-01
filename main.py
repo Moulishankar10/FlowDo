@@ -213,7 +213,7 @@ class Biller:
                     rev_data[str(frmt)][i]+=self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
 
-        print("\n ---- Updated the Inventory Data! ---- \n")
+        print("\n\n\n -------- Updated the Inventory Data! -------- \n")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 
@@ -426,7 +426,7 @@ def Order():
                     else:
                         print("\n\n!!! Invalid Response !!!\n\n")
                         continue
-                    print("\n                                |||||  Thanks for the Order |||||                \n")
+                    print("\n\n                                |||||  Thanks for the Order |||||                \n")
 
             elif order_opt == 9:
                 break
