@@ -423,6 +423,7 @@ def Order():
                         b.postProcessor()
                     else:
                         print("\n\n!!! Invalid Response !!!\n\n")
+                        continue
                     print("\n                                |||||  Thanks for the Order |||||                \n")
 
             elif order_opt == 9:
