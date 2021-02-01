@@ -362,7 +362,7 @@ def Order():
             print("\n---------------------------------------------------------\n")
             b.display()
             print("\n---------------------------------------------------------\n")
-            proceed.key = input("\nDo you want to make any changes in the Order? (y/n) : ")
+            proceed.key = input("\nDo you want to make any changes in the Order? (y/n) : ").lower()
             print("\n")
             
     
@@ -417,10 +417,12 @@ def Order():
                         proceed()
                     
                     key = proceed.key
-                    if key == "Y" or key == "y":
+                    if key == "y":
                         continue
-                    elif key == "N" or key == "n":
+                    elif key == "n":
                         b.postProcessor()
+                    else:
+                        print("\n\n!!! Invalid Response !!!\n\n")
                     print("\n                                |||||  Thanks for the Order |||||                \n")
 
             elif order_opt == 9:
@@ -523,6 +525,6 @@ if __name__ == "__main__":
                 elif final_opt == 'n': 
                     continue   
                 else:
-                    print("\n\n\n!!!! Invalid Response !!!!\n")
+                    print("\n\n\n\n!!!! Invalid Response !!!!\n")
 
             
