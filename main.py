@@ -514,10 +514,12 @@ if __name__ == "__main__":
                 Inventory()
                 
             elif opt == 9:
-                final_opt = input("\nDo you really want to exit FlowDo (y/n) : ")
-                if final_opt == "Y" or final_opt == "y":
+                final_opt = input("\nDo you really want to exit FlowDo (y/n) : ").lower()
+                if final_opt == "y":
                     break
-                else: 
+                elif final_opt == 'n': 
                     continue   
+                else:
+                    print("\n\n!!!! Invalid Response !!!!\n")
 
             
