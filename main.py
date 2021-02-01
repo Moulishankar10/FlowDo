@@ -524,7 +524,7 @@ if __name__ == "__main__":
             elif opt == 9:
                 final_opt = input("\nDo you really want to exit FlowDo (y/n) : ").lower()
                 if final_opt == "y":
-                    print("\n\n\t\t\t\t\t  THANK YOU FOR USING FLOWDO    \n\n")
+                    print("\n\n\t\t\t\t\t  ~~~~~~ THANK YOU FOR USING FLOWDO ~~~~~~   \n\n")
                     break
                 elif final_opt == 'n': 
                     continue   
