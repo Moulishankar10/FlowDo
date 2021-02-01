@@ -358,7 +358,7 @@ def Order():
 
     def proceed():
             print("\n--------------------- YOUR FINAL BILL -------------------\n")
-            print(f"Bill Date : {now.strftime('%d-%m-%Y      %I:%M %p')}")
+            print(f"Bill Date : {now.strftime('%d-%m-%Y')}     Time : {now.strftime('%I:%M %p')}")
             print("\n---------------------------------------------------------\n")
             b.display()
             print("\n---------------------------------------------------------\n")
