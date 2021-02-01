@@ -408,8 +408,11 @@ def Order():
                         print("\n")
                         if usr_res == 'y':
                             proceed()
-                        else:
+                        elif usr_res == 'n':
                             continue    
+                        else:
+                            print("\n\n!!! Invalid Response !!!\n")
+                            continue
                     else:
                         proceed()
                     
@@ -520,6 +523,6 @@ if __name__ == "__main__":
                 elif final_opt == 'n': 
                     continue   
                 else:
-                    print("\n\n!!!! Invalid Response !!!!\n")
+                    print("\n\n\n!!!! Invalid Response !!!!\n")
 
             
