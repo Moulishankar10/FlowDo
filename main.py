@@ -38,11 +38,11 @@ def orderOptionsVisualizer():
 
                                 Press 2 for Removing a product.
 
-                                Press 3 for viewing the bill.
+                                Press 3 for Viewing the bill.
 
-                                Press 4 to modify your order.
+                                Press 4 to Modify your order.
 
-                                Press 5 to proceed your order.
+                                Press 5 to Proceed your order.
 
                                 Press 9 for exit.
         \n******************************************************************************************************\n
