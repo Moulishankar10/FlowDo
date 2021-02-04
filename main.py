@@ -363,7 +363,7 @@ def Order():
             print(f"Bill Date : {now.strftime('%d-%m-%Y')}     Time : {now.strftime('%I:%M %p')}")
             print("\n-------------------------------------------------------------\n")
             b.display()
-            print("\n\t\t\t *** THANK YOU - HAVE A NICE DAY ***\n")
+            print("\n\t   *** THANK YOU - HAVE A NICE DAY ***\n")
             print("\n-------------------------------------------------------------\n")
             proceed.key = input("\nDo you want to make any changes in the Order? (y/n) : ").lower()
             print("\n")
