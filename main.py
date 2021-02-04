@@ -69,13 +69,13 @@ def revenueOptionsVisualizer():
 def inventoryOptionsVisualizer():
     print("""
         \n****************************************** INVENTORY MENU *********************************************\n
-                                Press 1 for viewing your inventory.
+                                Press 1 for Viewing your inventory.
 
                                 Press 2 for Adding a new product to your inventory.
 
                                 Press 3 for Removing a product from your inventory.
 
-                                Press 4 to modify the properties of existing products.
+                                Press 4 to Modify the properties of existing products.
 
                                 Press 9 for exit.
         \n*******************************************************************************************************\n
