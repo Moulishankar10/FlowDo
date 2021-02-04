@@ -280,19 +280,24 @@ def viewRevenueGraph():
 # FUNCTION TO VIEW THE STOCK INVENTORY
 def viewInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    print("\n------------------------------------------ STOCK INVENTORY ----------------------------------------\n\n",inv_data.to_string(index=False))
+    print("\n------------------------------------------ STOCK INVENTORY --------------------------------------------\n\n",inv_data.to_string(index=False))
 
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
-    serial = int(input("\nEnter the Serial No : "))
+    if len(inv_data) == 0:
+        snum = 0
+    else:
+        snum = len(inv_data)
+    #serial = int(input("\nEnter the Serial No : "))
+    snum += 1
     prod_code = input("\nEnter the Product Code : ").upper()
     prod_name = input("\nEnter the Product Name : ").upper()
     avail_stock = int(input("\nEnter the Available Stock : "))
     max_stock = int(input("\nEnter the Maximum Stock : "))
     cost_price = int(input("\nEnter the Cost Price : "))
     selling_price = int(input("\nEnter the Selling Price : "))
-    inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
+    inv_data.loc[len(inv_data.index)] = [snum,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
 
