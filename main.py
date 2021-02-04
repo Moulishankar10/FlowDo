@@ -20,11 +20,11 @@ import matplotlib.pyplot as plt
 def mainOptionsVisualizer():
     print("""
         \n******************************************** MAIN MENU ***********************************************\n
-                                Press 1 for Adding a new order.
+                                Press 1 for adding a New Order.
 
-                                Press 2 for displaying the revenue options.
+                                Press 2 for displaying the Revenue options.
 
-                                Press 3 for displaying the inventory options.
+                                Press 3 for displaying the Inventory options.
 
                                 Press 9 for exit.
         \n******************************************************************************************************\n
