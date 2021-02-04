@@ -172,11 +172,11 @@ class Biller:
             res = pd.DataFrame(form)
             res.index=list(range(1,len(self.prod_name)+1))
             print(res)
-            print("\n=========================================================\n")
+            print("\n=============================================================\n")
             print(f"Total Items           :  {len(self.prod_name)}")
             print(f"Total Quantities      :  {sum(self.quantity)}")
             print(f"Grand Total           :  Rs.{sum(self.total_price)}")
-            print("\n=========================================================\n")
+            print("\n=============================================================\n")
 
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self,ele):
@@ -210,7 +210,7 @@ class Biller:
         for i in range(len(rev_data)):
             for j in range(len(self.prod_name)):
                 if rev_data["Product_Name"][i] == self.prod_name[j]:
-                    rev_data[str(frmt)][i]+=self.total_price[j]
+                    rev_data[str(frmt)][i] += self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
 
         print("\n\n\n -------- Updated the Inventory Data! -------- \n")
@@ -294,7 +294,7 @@ def addProdInventory():
     selling_price = int(input("\nEnter the Selling Price : "))
     inv_data.loc[len(inv_data.index)] = [serial,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
     inv_data.to_csv("data/inventory.csv",index=False)
-    print("\n>>>>>>>> Product Added to the Inventory. <<<<<<<<\n")
+    print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
 
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
@@ -306,7 +306,7 @@ def removeProdInventory():
                 ind = i
         inv_data.drop([ind],axis = 0,inplace = True)
         inv_data.to_csv("data/inventory.csv",index=False)
-        print("\n>>>>>>>> Product is Removed from the Inventory. <<<<<<<<\n")
+        print("\n>>>>>>>> Product removed from the Inventory. <<<<<<<<\n")
     else:
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
@@ -359,18 +359,19 @@ def Order():
     now = datetime.now()
 
     def proceed():
-            print("\n--------------------- YOUR FINAL BILL -------------------\n")
+            print("\n--------------------- YOUR FINAL BILL -----------------------\n")
             print(f"Bill Date : {now.strftime('%d-%m-%Y')}     Time : {now.strftime('%I:%M %p')}")
-            print("\n---------------------------------------------------------\n")
+            print("\n-------------------------------------------------------------\n")
             b.display()
-            print("\n---------------------------------------------------------\n")
+            print("\n\t\t\t *** THANK YOU - HAVE A NICE DAY ***\n")
+            print("\n-------------------------------------------------------------\n")
             proceed.key = input("\nDo you want to make any changes in the Order? (y/n) : ").lower()
             print("\n")
             
     
     while True:
         orderOptionsVisualizer()
-        option = input("Enter your option : ")
+        option = input("\nEnter your option : ")
         if option not in '123459':
             print("\n!!!!! Please enter the valid option !!!!!\n")
         else:
@@ -391,9 +392,9 @@ def Order():
                 if b.isEmpty():
                     print("\n!!! Sorry, It is an Empty Bill !!!\n")
                 else:
-                    print("\n------------------------- BILL --------------------------\n")
+                    print("\n------------------------- BILL ------------------------------\n")
                     print(f"Bill Date : {now.strftime('%d-%m-%Y')}     Time : {now.strftime('%I:%M %p')}")
-                    print("\n---------------------------------------------------------\n")
+                    print("\n-------------------------------------------------------------\n")
                     b.display()
             
             elif order_opt == 4:
