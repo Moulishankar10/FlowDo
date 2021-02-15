@@ -83,8 +83,8 @@ def inventoryOptionsVisualizer():
 
 # USED TO CHECK IF THE COLUMN FOR THE MONTH IS CREATED OR NOT
 def revMonthChecker():
-    today = datetime.today()
-    frmt = "{}-{}".format(today.month,today.year)
+    today = datetime.now()
+    frmt = today.strftime('%m-%Y')
     rev_data = pd.read_csv('data/revenue.csv')
     header = list(rev_data.columns)
     x = [0]*len(rev_data)
