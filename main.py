@@ -223,7 +223,7 @@ def viewMonthRevenue():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         month_revenue = sum(list(rev_data[frmt]))
-        print(f"\n                                    The revenue generated in {frmt} -- Rs.{month_revenue}")
+        print(f"\n                                    The revenue generated on {frmt} -- Rs.{month_revenue}")
     else:
         print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
@@ -233,7 +233,7 @@ def maxProfit():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         max_amt = max(list(rev_data[frmt]))
-        print(f"\n                           The following product(s) generated the maximum profit in {frmt} : \n")
+        print(f"\n                           The following product(s) generated the maximum profit on {frmt} : \n")
         for i in range(len(rev_data)):
             if rev_data[frmt][i] == max_amt:
                 print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],max_amt))
@@ -246,7 +246,7 @@ def minProfit():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         min_amt = min(list(rev_data[frmt]))
-        print(f"\n                             The following product(s) generated the least profit in {frmt}: \n")
+        print(f"\n                             The following product(s) generated the least profit on {frmt}: \n")
         for i in range(len(rev_data)):
             if rev_data[frmt][i] == min_amt:
                 print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],min_amt))
