@@ -224,7 +224,7 @@ def viewMonthRevenue():
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
         month_revenue = sum(list(rev_data[frmt]))
-        print(f"\n                                    The revenue generated on {month[int(frmt[:2])]} {int(frmt[-4:])} -- Rs.{month_revenue}")
+        print(f"\n                                    The revenue generated on {month[int(frmt[:2])-1]} {int(frmt[-4:])} -- Rs.{month_revenue}")
     else:
         print("\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
