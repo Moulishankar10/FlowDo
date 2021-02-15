@@ -196,8 +196,8 @@ class Biller:
         
     # FUNCTION TO PERFORM THE POST PROCESSING ACTIVITIES ONCE THE BILL IS CONFIRMED
     def postProcessor(self):
-        today = datetime.today()
-        frmt = f"{today.month}-{today.year}"
+        today = datetime.now()
+        frmt = today.strftime('%m-%Y')
         inv_data = pd.read_csv('data/inventory.csv')
         rev_data = pd.read_csv("data/revenue.csv")
 
