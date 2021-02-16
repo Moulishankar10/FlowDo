@@ -263,24 +263,25 @@ def viewRevenueGraph():
     year = input("\nEnter the Year (YYYY) : ")
     for i in rev_data.columns:
         if year in i:
-            year_checker = True
-        else:
-            year_checker = False
-    if year_checker:
-        rev_data = pd.read_csv("data/revenue.csv")
-        cols = list(rev_data.columns)
-        for i in cols:
-            if i[-4:] == year:
-                months.append(month[int(i[:2])-1])
-                profits.append(sum(list(rev_data[i])))
-        plt.scatter(months, profits,color ='red',linewidths=3) 
-        plt.plot(months,profits,color="blue")
-        plt.bar(months,profits,color="green",width = 0.5)
-        plt.xlabel("Month") 
-        plt.ylabel("Revenue Generated (INR)") 
-        plt.title("Revenue for the year {}".format(year))  
-        plt.show() 
-    else:
+            rev_data = pd.read_csv("data/revenue.csv")
+            cols = list(rev_data.columns)
+            for i in cols:
+                if i[-4:] == year:
+                    months.append(month[int(i[:2])-1])
+                    profits.append(sum(list(rev_data[i])))
+            plt.scatter(months, profits,color ='red',linewidths=3) 
+            plt.plot(months,profits,color="blue")
+            plt.bar(months,profits,color="green",width = 0.5)
+            plt.xlabel("Month") 
+            plt.ylabel("Revenue Generated (INR)") 
+            plt.title("Revenue for the year {}".format(year))  
+            plt.show() 
+            flag = 1
+            break
+        elif year not in i:
+            flag = 0
+            
+    if flag == 0:
         print("\n!!!! Invalid Year or Non-Entried Year !!!!\n")
     
 
