@@ -259,11 +259,11 @@ def minProfit():
 def viewRevenueGraph():
     profits =[]
     months = []
-    today = datetime.today()
+    year = input("\nEnter the Year : ")
     rev_data = pd.read_csv("data/revenue.csv")
     cols = list(rev_data.columns)
     for i in cols:
-        if i[-4:] == str(today.year):
+        if i[-4:] == year:
             months.append(i)
     for i in months:
         profits.append(sum(list(rev_data[i])))
