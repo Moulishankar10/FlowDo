@@ -278,7 +278,7 @@ def viewRevenueGraph():
         plt.bar(months,profits,color="green",width = 0.5)
         plt.xlabel("Month") 
         plt.ylabel("Revenue Generated (INR)") 
-        plt.title("Revenue for this {}".format(year))  
+        plt.title("Revenue for the year {}".format(year))  
         plt.show() 
     else:
         print("\n!!!! Invalid Year or Non-Entried Year !!!!\n")
