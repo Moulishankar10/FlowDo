@@ -271,9 +271,8 @@ def viewRevenueGraph():
         cols = list(rev_data.columns)
         for i in cols:
             if i[-4:] == year:
-                months.append(i)
-        for i in months:
-            profits.append(sum(list(rev_data[i])))
+                months.append(month[int(i[:2])-1])
+                profits.append(sum(list(rev_data[i])))
         plt.scatter(months, profits,color ='red',linewidths=3) 
         plt.plot(months,profits,color="blue")
         plt.bar(months,profits,color="green",width = 0.5)
