@@ -58,7 +58,7 @@ def revenueOptionsVisualizer():
 
                 Press 3 for viewing the product which generated the Minimum Profit in a month.
 
-                Press 4 for viewing the Revenue Trend Graph.
+                Press 4 for viewing the Revenue Trend Graph for a year.
 
                 Press 9 for exit.
         \n******************************************************************************************************\n
