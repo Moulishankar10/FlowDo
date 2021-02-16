@@ -271,7 +271,7 @@ def viewRevenueGraph():
                     profits.append(sum(list(rev_data[i])))
             plt.scatter(months, profits,color ='red',linewidths=3) 
             plt.plot(months,profits,color="blue")
-            plt.bar(months,profits,color="green",width = 0.5)
+            plt.bar(months,profits,color="green",width = 0.2)
             plt.xlabel("Month") 
             plt.ylabel("Revenue Generated (INR)") 
             plt.title("Revenue for the year {}".format(year))  
@@ -280,7 +280,7 @@ def viewRevenueGraph():
             break
         elif year not in i:
             flag = 0
-            
+
     if flag == 0:
         print("\n!!!! Invalid Year or Non-Entried Year !!!!\n")
     
