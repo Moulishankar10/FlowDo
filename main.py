@@ -464,12 +464,14 @@ def Revenue():
         else:
             rev_opt = int(option)
             if rev_opt == 1:
-                viewMonthRevenue()
+                viewRevenue()
             elif rev_opt == 2:
-                maxProfit()
+                viewMonthRevenue()
             elif rev_opt == 3:
-                minProfit()
+                maxProfit()
             elif rev_opt == 4:
+                minProfit()
+            elif rev_opt == 5:
                 viewRevenueGraph()
             elif rev_opt == 9:
                 break
