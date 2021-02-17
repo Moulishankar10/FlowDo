@@ -319,6 +319,7 @@ def addProdInventory():
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
+    rev_data = pd.read_csv("data/revenue.csv")
     l = list(inv_data["Product_Name"])
     prod_name = input("\nEnter the product name to remove : ").upper()
     if prod_name in l:
@@ -326,12 +327,17 @@ def removeProdInventory():
             if inv_data["Product_Name"][i] == prod_name:
                 ind = i
         inv_data.drop([ind],axis = 0,inplace = True)
-        inv_data.to_csv("data/inventory.csv",index=False)
+        inv_data.to_csv("data/inventory.csv",index = False)
         print("\n>>>>>>>> Product removed from the Inventory. <<<<<<<<\n")
     else:
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
-            
+    for j in range(len(rev_data)):
+        if rev_data["Product_Name"][i] == prod_name:
+            ind = i
+    rev_data.drop([ind],axis = 0,inplace = True)
+    rev_data.to_csv("data/revenue.csv",index = False)
+    
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
     inv_data = pd.read_csv("data/inventory.csv")
