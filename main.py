@@ -52,13 +52,15 @@ def orderOptionsVisualizer():
 def revenueOptionsVisualizer():
     print("""
         \n******************************************* REVENUE MENU *********************************************\n
-                Press 1 for viewing a Month's Total Revenue.
+                Press 1 for viewing the Revenue Database.
+                
+                Press 2 for viewing a Month's Total Revenue.
 
-                Press 2 for viewing the product which generated the Maximum Profit in a month.
+                Press 3 for viewing the product which generated the Maximum Profit in a month.
 
-                Press 3 for viewing the product which generated the Minimum Profit in a month.
+                Press 4 for viewing the product which generated the Minimum Profit in a month.
 
-                Press 4 for viewing the Revenue Trend Graph for a year.
+                Press 5 for viewing the Revenue Trend Graph for a year.
 
                 Press 9 for exit.
         \n******************************************************************************************************\n
@@ -69,7 +71,7 @@ def revenueOptionsVisualizer():
 def inventoryOptionsVisualizer():
     print("""
         \n****************************************** INVENTORY MENU *********************************************\n
-                                Press 1 for Viewing your inventory.
+                                Press 1 for Viewing the Stock Inventory.
 
                                 Press 2 for Adding a new product to your inventory.
 
