@@ -335,8 +335,9 @@ def removeProdInventory():
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
     inv_data = pd.read_csv("data/inventory.csv")
+    l = list(inv_data["Product_Name"])
     prod_name = input("\nEnter the product name to modify : ").upper()
-    if prod_name in inv_data["Product_Name"]:
+    if prod_name in l:
         for i in range(len(inv_data)):
             if inv_data["Product_Name"][i] == prod_name:
                 ind = i
@@ -366,7 +367,7 @@ def modifyProduct():
                 print("\n!!!!! Please enter the valid option !!!!!\n")
 
         inv_data.to_csv("data/inventory.csv",index=False)
-        print("\n>>>>>>>> Updated the Inventory. <<<<<<<<\n")
+        print("\n\n>>>>>>>> Updated the Inventory. <<<<<<<<\n")
     else:
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
