@@ -319,8 +319,9 @@ def addProdInventory():
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
+    l = list(inv_data["Product_Name"])
     prod_name = input("\nEnter the product name to remove : ").upper()
-    if prod_name in inv_data["Product_Name"]:
+    if prod_name in l:
         for i in range(len(inv_data)):
             if inv_data["Product_Name"][i] == prod_name:
                 ind = i
