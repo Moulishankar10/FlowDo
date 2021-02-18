@@ -25,5 +25,7 @@ bash autorun.sh
 
 4. Run main.py
 
-5. When using the software for the first time, the user should modify the products and their properties on the inventory.csv and revenue.csv in data folder either by manually modifying values or by using inventory editing options in the software.
+5. The data in the databases inventory.csv and revenue.csv is only for the testing and development progress.
+
+6. When using the software for the first time, the user should modify the products and their properties in both the databases 'inventory.csv' and 'revenue.csv' in the data folder either by manually modifying the values or by using editing options for the databases in the software.
 
