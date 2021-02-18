@@ -301,6 +301,7 @@ def viewInventory():
 # FUNCTION TO ADD A NEW PRODUCT TO THE INVENTORY
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
+    rev_data = pd.read_csv("data/revenue.csv")
     if len(inv_data) == 0:
         snum = 0
     else:
@@ -316,6 +317,10 @@ def addProdInventory():
     inv_data.to_csv("data/inventory.csv",index=False)
     print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
 
+    temp_list = [0]*(len(rev_data.columns)-2)
+    new_row = [prod_code,prod_name]
+    rev_data.loc[len(rev_data.index)] = new_row + temp_list
+    rev_data.to_csv("data/revenue.csv",index = False)
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
