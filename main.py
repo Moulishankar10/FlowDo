@@ -321,6 +321,7 @@ def addProdInventory():
     new_row = [prod_code,prod_name]
     rev_data.loc[len(rev_data.index)] = new_row + temp_list
     rev_data.to_csv("data/revenue.csv",index = False)
+
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
@@ -337,11 +338,13 @@ def removeProdInventory():
     else:
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
-    for j in range(len(rev_data)):
-        if rev_data["Product_Name"][j] == prod_name:
-            ind = i
-    rev_data.drop([ind],axis = 0,inplace = True)
-    rev_data.to_csv("data/revenue.csv",index = False)
+    l2 = list(rev_data["Product_Name"])
+    if prod_name in l2:
+        for j in range(len(rev_data)):
+            if rev_data["Product_Name"][j] == prod_name:
+                ind2 = j
+        rev_data.drop([ind2],axis = 0,inplace = True)
+        rev_data.to_csv("data/revenue.csv",index = False)
     
 # FUNCTION TO MODIFY THE EXISTING VALUES OF A PRODUCT IN THE INVENTORY            
 def modifyProduct():
