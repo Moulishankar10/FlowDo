@@ -338,7 +338,7 @@ def removeProdInventory():
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
     for j in range(len(rev_data)):
-        if rev_data["Product_Name"][i] == prod_name:
+        if rev_data["Product_Name"][j] == prod_name:
             ind = i
     rev_data.drop([ind],axis = 0,inplace = True)
     rev_data.to_csv("data/revenue.csv",index = False)
