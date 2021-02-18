@@ -302,6 +302,7 @@ def viewInventory():
 def addProdInventory():
     inv_data = pd.read_csv("data/inventory.csv")
     rev_data = pd.read_csv("data/revenue.csv")
+    l = list(inv_data["Product_Name"])
     if len(inv_data) == 0:
         snum = 0
     else:
@@ -309,18 +310,22 @@ def addProdInventory():
     snum += 1
     prod_code = input("\nEnter the Product Code : ").upper()
     prod_name = input("\nEnter the Product Name : ").upper()
-    avail_stock = int(input("\nEnter the Available Stock : "))
-    max_stock = int(input("\nEnter the Maximum Stock : "))
-    cost_price = int(input("\nEnter the Cost Price : "))
-    selling_price = int(input("\nEnter the Selling Price : "))
-    inv_data.loc[len(inv_data.index)] = [snum,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
-    inv_data.to_csv("data/inventory.csv",index=False)
-    print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
 
-    temp_list = [0]*(len(rev_data.columns)-2)
-    new_row = [prod_code,prod_name]
-    rev_data.loc[len(rev_data.index)] = new_row + temp_list
-    rev_data.to_csv("data/revenue.csv",index = False)
+    if prod_name not in l:
+        avail_stock = int(input("\nEnter the Available Stock : "))
+        max_stock = int(input("\nEnter the Maximum Stock : "))
+        cost_price = int(input("\nEnter the Cost Price : "))
+        selling_price = int(input("\nEnter the Selling Price : "))
+        inv_data.loc[len(inv_data.index)] = [snum,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
+        inv_data.to_csv("data/inventory.csv",index=False)
+        print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
+
+        temp_list = [0]*(len(rev_data.columns)-2)
+        new_row = [prod_code,prod_name]
+        rev_data.loc[len(rev_data.index)] = new_row + temp_list
+        rev_data.to_csv("data/revenue.csv",index = False)
+    else:
+        print("\n!!! The Specified Product is already in the Inventory !!!\n")
 
 # FUNCTION TO REMOVE A PRODUCT FROM THE INVENTORY
 def removeProdInventory():
