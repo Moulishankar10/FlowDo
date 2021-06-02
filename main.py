@@ -20,13 +20,13 @@ import matplotlib.pyplot as plt
 def mainOptionsVisualizer():
     print("""
         \n******************************************** MAIN MENU ***********************************************\n
-                                Press 1 for adding a New Order.
+                                Press 1 for adding a New Order
 
-                                Press 2 for displaying the Revenue options.
+                                Press 2 for displaying the Revenue options
 
-                                Press 3 for displaying the Inventory options.
+                                Press 3 for displaying the Inventory options
 
-                                Press 9 for exit.
+                                Press 9 for exit
         \n******************************************************************************************************\n
     """)
 
@@ -34,17 +34,17 @@ def mainOptionsVisualizer():
 def orderOptionsVisualizer():
     print("""
         \n******************************************** ORDER MENU **********************************************\n
-                                Press 1 for Adding a new product.
+                                Press 1 for Adding a new product
 
-                                Press 2 for Removing a product.
+                                Press 2 for Removing a product
 
-                                Press 3 for Viewing the bill.
+                                Press 3 for Viewing the bill
 
-                                Press 4 to Modify your order.
+                                Press 4 to Modify your order
 
-                                Press 5 to Proceed your order.
+                                Press 5 to Proceed your order
 
-                                Press 9 for exit.
+                                Press 9 for exit
         \n******************************************************************************************************\n
     """)
 
@@ -52,17 +52,17 @@ def orderOptionsVisualizer():
 def revenueOptionsVisualizer():
     print("""
         \n******************************************* REVENUE MENU *********************************************\n
-                Press 1 for viewing the Revenue Database.
+                Press 1 for viewing the Revenue Database
                 
-                Press 2 for viewing a Month's Total Revenue.
+                Press 2 for viewing a Month's Total Revenue
 
-                Press 3 for viewing the product which generated the Maximum Profit in a month.
+                Press 3 for viewing the product which generated the Maximum Profit in a month
 
-                Press 4 for viewing the product which generated the Minimum Profit in a month.
+                Press 4 for viewing the product which generated the Minimum Profit in a month
 
-                Press 5 for viewing the Revenue Trend Graph for a year.
+                Press 5 for viewing the Revenue Trend Graph for a year
 
-                Press 9 for exit.
+                Press 9 for exit
         \n******************************************************************************************************\n
     """)
     
@@ -71,15 +71,15 @@ def revenueOptionsVisualizer():
 def inventoryOptionsVisualizer():
     print("""
         \n****************************************** INVENTORY MENU *********************************************\n
-                                Press 1 for Viewing the Stock Inventory.
+                                Press 1 for Viewing the Stock Inventory
 
-                                Press 2 for Adding a new product to your inventory.
+                                Press 2 for Adding a new product to your inventory
 
-                                Press 3 for Removing a product from your inventory.
+                                Press 3 for Removing a product from your inventory
 
-                                Press 4 to Modify the properties of existing products.
+                                Press 4 to Modify the properties of existing products
 
-                                Press 9 for exit.
+                                Press 9 for exit
         \n*******************************************************************************************************\n
     """)
 
@@ -135,7 +135,7 @@ class Biller:
                                 self.front=self.rear=0
                             else:
                                 self.rear += 1
-                            print("\n>>>>>>>> Product is Added to the Order. <<<<<<<<\n")
+                            print("\n>>>>>>>> Product is Added to the Order <<<<<<<<\n")
                             break
 
                         else:
@@ -159,7 +159,7 @@ class Biller:
                 del self.prod_name[ind]
                 del self.quantity[ind]
                 self.rear -= 1
-                print("\n>>>>>>>> Product is Removed from the Order. <<<<<<<<\n")
+                print("\n>>>>>>>> Product is Removed from the Order <<<<<<<<\n")
             else:
                 print("\n!!! The Specified Product is not in the Order !!!\n")
 
@@ -192,7 +192,7 @@ class Biller:
                     self.prod_name[ind] = input("\nEnter the new product name : ").upper()
                 elif key == 1:
                     self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
-                print("\n>>>>>>>> Updated the Order. <<<<<<<<\n")
+                print("\n>>>>>>>> Updated the Order <<<<<<<<\n")
             else:
                 print("\n!!! The Specified Product is not in the Order !!!\n")
         
@@ -312,13 +312,13 @@ def addProdInventory():
     prod_name = input("\nEnter the Product Name : ").upper()
 
     if prod_name not in l:
-        avail_stock = int(input("\nEnter the Available Stock : "))
         max_stock = int(input("\nEnter the Maximum Stock : "))
+        avail_stock = int(input("\nEnter the Available Stock : "))
         cost_price = int(input("\nEnter the Cost Price : "))
         selling_price = int(input("\nEnter the Selling Price : "))
         inv_data.loc[len(inv_data.index)] = [snum,prod_code,prod_name,avail_stock,max_stock,cost_price,selling_price]
         inv_data.to_csv("data/inventory.csv",index=False)
-        print("\n>>>>>>>> Product added to the Inventory. <<<<<<<<\n")
+        print("\n>>>>>>>> Product added to the Inventory <<<<<<<<\n")
 
         temp_list = [0]*(len(rev_data.columns)-2)
         new_row = [prod_code,prod_name]
@@ -386,7 +386,7 @@ def modifyProduct():
                 print("\n!!!!! Please enter the valid option !!!!!\n")
 
         inv_data.to_csv("data/inventory.csv",index=False)
-        print("\n\n>>>>>>>> Updated the Inventory. <<<<<<<<\n")
+        print("\n\n>>>>>>>> Updated the Inventory <<<<<<<<\n")
     else:
         print("\n!!!! The Specified Product is not in the Inventory !!!!\n")
 
