@@ -215,7 +215,7 @@ class Biller:
                     rev_data[str(frmt)][i] += self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
 
-        print("\n\n\n -------- Updated the Inventory Data! -------- \n")
+        print("\n\n\n -------- Updated the Inventory Data ! -------- \n")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
 month = ["January","February","March","April","May","June","July","August","September","October","November","December"]
@@ -483,6 +483,7 @@ def Order():
                         print("\n\n!!! Invalid Response !!!\n\n")
                         continue
                     print("\n\n                                |||||  Thanks for the Order |||||                \n")
+                    break
 
             elif order_opt == 9:
                 break
