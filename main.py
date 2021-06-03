@@ -103,14 +103,12 @@ class Biller:
         self.price=[]
         self.total_price=[]
         self.limit=l
-        self.front=None
-        self.rear=None
         
     def isFull(self):
-        return self.rear==self.limit-1
+        return len(self.prod_name) == self.limit
             
     def isEmpty(self):
-        return self.front==None
+        return len(self.prod_name) == 0
 
     # FUNCTION TO ADD A NEW PRODUCT TO THE BILL        
     def enqueue(self,ele,qn):
@@ -130,11 +128,6 @@ class Biller:
                             self.prod_name.append(ele.upper())
                             self.quantity.append(int(qn))
                             self.price.append(inv_data["Selling_Price"][i])
-
-                            if self.front==None and self.rear==None:
-                                self.front=self.rear=0
-                            else:
-                                self.rear += 1
                             print("\n>>>>>>>> Product is Added to the Order <<<<<<<<\n")
                             break
 
@@ -158,7 +151,8 @@ class Biller:
                 ind = self.prod_name.index(ele)
                 del self.prod_name[ind]
                 del self.quantity[ind]
-                self.rear -= 1
+                del self.price[ind]
+                del self.total_price[ind]
                 print("\n>>>>>>>> Product is Removed from the Order <<<<<<<<\n")
             else:
                 print("\n!!! The Specified Product is not in the Order !!!\n")
