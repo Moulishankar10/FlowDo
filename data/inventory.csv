@@ -1,5 +1,5 @@
 S.No.,Product_Code,Product_Name,Available_Stock,Maximum_Stock,Cost_Price,Selling_Price
-1,A001,HDD,93,200,3000,4000
+1,A001,HDD,89,200,3000,4000
 2,A002,RAM,84,200,4000,5000
 3,A003,SSD,98,200,5000,7500
 4,A004,CPU,75,200,20000,30000
