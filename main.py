@@ -89,10 +89,10 @@ def revMonthChecker():
     frmt = today.strftime('%m-%Y')
     rev_data = pd.read_csv('data/revenue.csv')
     header = list(rev_data.columns)
-    x = [0]*len(rev_data)
     if frmt not in header:
+        x = [0]*len(rev_data)
         rev_data[frmt] = x
-    rev_data.to_csv("data/revenue.csv", index = False)
+        rev_data.to_csv("data/revenue.csv", index = False)
     
 # CLASS FOR BILLING OPERATIONS
 class Biller:
@@ -260,11 +260,18 @@ def minProfit():
     rev_data = pd.read_csv('data/revenue.csv')
     frmt = input("\nEnter the time period (MM-YYYY) : ")
     if frmt[:2] in ['01','02','03','04','05','06','07','08','09','10','11','12'] and frmt in rev_data.columns:
-        min_amt = min(list(rev_data[frmt]))
-        print(f"\n                      The following product(s) generated the least profit on {month[int(frmt[:2])-1]} {int(frmt[-4:])} : \n")
-        for i in range(len(rev_data)):
-            if rev_data[frmt][i] == min_amt:
-                print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],min_amt))
+        if list(rev_data[frmt]) == [0 for i in range(len(rev_data))]:
+            today = datetime.now()
+            if frmt[:2] == today.strftime('%m'):
+                print(f"\n\n!! No Products are sold in {month[int(frmt[:2])-1]} {int(frmt[-4:])} !!\n")
+            else:
+                print(f"\n\n!! No Products were sold in {month[int(frmt[:2])-1]} {int(frmt[-4:])} !!\n")
+        else:
+            min_amt = min(list(rev_data[frmt]))
+            print(f"\n                      The following product(s) generated the least profit on {month[int(frmt[:2])-1]} {int(frmt[-4:])} : \n")
+            for i in range(len(rev_data)):
+                if rev_data[frmt][i] == min_amt:
+                    print("        * {}   -   Rs.{}".format(rev_data["Product_Name"][i],min_amt))
     else:
         print("\n\n!!!! Invalid Time Period or Non-Entried Time Period !!!!\n")
 
