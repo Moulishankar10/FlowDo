@@ -278,9 +278,8 @@ def viewRevenueGraph():
     for i in rev_data.columns:
         if year in i:
             rev_data = pd.read_csv("data/revenue.csv")
-            cols = list(rev_data.columns)
-            for i in cols:
-                if i[-4:] == year:
+            for i in rev_data.columns:
+                if year in i:
                     months.append(month[int(i[:2])-1])
                     profits.append(sum(list(rev_data[i])))
             plt.scatter(months, profits,color ='red',linewidths=3) 
@@ -489,7 +488,7 @@ def Revenue():
     while True:
         revenueOptionsVisualizer()
         option = input("\nEnter your option : ")
-        if option not in '12349':
+        if option not in '123459':
             print("\n!!!!! Please enter the valid option !!!!!\n")
         else:
             rev_opt = int(option)
