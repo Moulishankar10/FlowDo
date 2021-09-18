@@ -114,23 +114,22 @@ class Biller:
     def enqueue(self,ele,qn):
         if self.isFull():
             print("\nMaximum limit reached !")
+        elif ele.upper() in self.prod_name:
+                print(f"\n!! '{ele.upper()}' is already in the ordered list !!")
+                print("\n--- Please refer the 'ORDER MENU' to modify the ordered items ---\n")
         else:
-
             inv_data = pd.read_csv('data/inventory.csv')
             flag = 0
             for i in range(len(inv_data)):
                 flag = 0
-                if inv_data["Product_Name"][i]==ele.upper():
+                if inv_data["Product_Name"][i] == ele.upper():
                     if qn.isnumeric() == True:
-                        
                         if int(qn) <= inv_data["Available_Stock"][i]:
-
                             self.prod_name.append(ele.upper())
                             self.quantity.append(int(qn))
                             self.price.append(inv_data["Selling_Price"][i])
                             print("\n>>>>>>>> Product is Added to the Order <<<<<<<<\n")
                             break
-
                         else:
                             print("\n!! Sorry for the inconvenience... Your required product is Out of Stock !!")
                             break
