@@ -142,10 +142,11 @@ class Biller:
                 print("\n!! Unavailable Product or Invalid Product !!")
 
     # FUNCTION TO REMOVE A PRODUCT FROM THE BILL
-    def remove(self,ele):
+    def remove(self):
         if self.isEmpty():
-            print("\n!!! No Products are selected for the Order - Couldn't do Remove operation !!!\n")
+            print("\n!!! You haven't ordered any product(s) yet to remove !!!\n")
         else:
+            ele = input("\nEnter the product name : ").upper()
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele)
                 del self.prod_name[ind]
@@ -159,7 +160,7 @@ class Biller:
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
         if self.isEmpty():
-            print("\n!!! You haven't ordered any products yet to generate bill !!!\n")
+            print("\n!!! You haven't ordered any product(s) yet to generate bill !!!\n")
         else:
             self.total_price = list(np.array(self.quantity)*np.array(self.price))
             
@@ -176,15 +177,15 @@ class Biller:
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
     def modify(self):
         if self.isEmpty():
-            print("\n!!! You haven't ordered any products yet to modify !!!\n")
+            print("\n!!! You haven't ordered any product(s) yet to modify !!!\n")
         else:
             ele = input("\nEnter the product name : ").upper()
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele.upper())
-                key = int(input("\n                 Press 0 to modify the product name ..... \n\n                 Press 1 to modify the quantity .....\n\nYour Option : "))
-                if key == 0:
+                key = int(input("\n                 Press 1 to modify the product name ..... \n\n                 Press 2 to modify the quantity .....\n\nYour Option : "))
+                if key == 1:
                     self.prod_name[ind] = input("\nEnter the new product name : ").upper()
-                elif key == 1:
+                elif key == 2:
                     self.quantity[ind] = int(input("\nEnter the new amount of quantity : "))
                 print("\n>>>>>>>> Updated the Order <<<<<<<<\n")
             else:
@@ -433,12 +434,11 @@ def Order():
                     b.enqueue(ele,qn)
                 
             elif order_opt == 2:
-                ele = input("\nEnter the product name : ").upper()
-                b.remove(ele)
+                b.remove()
                 
             elif order_opt == 3:
                 if b.isEmpty():
-                    print("\n!!! Sorry, It is an Empty Bill !!!\n")
+                    print("\n!!! You haven't ordered any product(s) yet to generate bill !!!\n")
                 else:
                     print("\n------------------------- BILL ------------------------------\n")
                     print(f"Bill Date : {now.strftime('%d-%m-%Y')}     Time : {now.strftime('%I:%M %p')}")
@@ -450,7 +450,7 @@ def Order():
             
             elif order_opt == 5:
                 if b.isEmpty():
-                    print("\n!!! Couldn't proceed the Order - No Products are Selected !!!\n")
+                    print("\n!!! Couldn't proceed the Order - No Product(s) is/are Ordered !!!\n")
                 else:
                     if len(b.quantity) != l:
                         print(f"\n\n!! You didn't ordered {l} number of products !!\n\n")
