@@ -20,11 +20,11 @@ import matplotlib.pyplot as plt
 def mainOptionsVisualizer():
     print("""
         \n******************************************** MAIN MENU ***********************************************\n
-                                Press 1 for adding a New Order
+                                Press 1 to take a New Order
 
-                                Press 2 for displaying the Revenue options
+                                Press 2 to explore the Revenue options
 
-                                Press 3 for displaying the Inventory options
+                                Press 3 to explore the Inventory properties
 
                                 Press 9 for exit
         \n******************************************************************************************************\n
@@ -34,15 +34,15 @@ def mainOptionsVisualizer():
 def orderOptionsVisualizer():
     print("""
         \n******************************************** ORDER MENU **********************************************\n
-                                Press 1 for Adding a new product
+                                Press 1 to add a new product
 
-                                Press 2 for Removing a product
+                                Press 2 to remove a product
 
-                                Press 3 for Viewing the bill
+                                Press 3 to view the bill
 
-                                Press 4 to Modify your order
+                                Press 4 to modify your order
 
-                                Press 5 to Proceed your order
+                                Press 5 to proceed your order
 
                                 Press 9 for exit
         \n******************************************************************************************************\n
@@ -52,15 +52,15 @@ def orderOptionsVisualizer():
 def revenueOptionsVisualizer():
     print("""
         \n******************************************* REVENUE MENU *********************************************\n
-                Press 1 for viewing the Revenue Database
+                Press 1 to view the Revenue Database
                 
-                Press 2 for viewing a Month's Total Revenue
+                Press 2 to view a Month's Total Revenue
 
-                Press 3 for viewing the product which generated the Maximum Profit in a month
+                Press 3 to view the product which generated the Maximum Profit in any month
 
-                Press 4 for viewing the product which generated the Minimum Profit in a month
+                Press 4 to view the product which generated the Minimum Profit in any month
 
-                Press 5 for viewing the Revenue Trend Graph for a year
+                Press 5 to view the Revenue Trend Graph for any year
 
                 Press 9 for exit
         \n******************************************************************************************************\n
@@ -71,13 +71,13 @@ def revenueOptionsVisualizer():
 def inventoryOptionsVisualizer():
     print("""
         \n****************************************** INVENTORY MENU *********************************************\n
-                                Press 1 for Viewing the Stock Inventory
+                                Press 1 to view the Stock Inventory
 
-                                Press 2 for Adding a new product to your inventory
+                                Press 2 to add a new product to your inventory
 
-                                Press 3 for Removing a product from your inventory
+                                Press 3 to remove a product from your inventory
 
-                                Press 4 to Modify the properties of existing products
+                                Press 4 to modify the properties of existing products
 
                                 Press 9 for exit
         \n*******************************************************************************************************\n
@@ -366,14 +366,14 @@ def modifyProduct():
         for i in range(len(inv_data)):
             if inv_data["Product_Name"][i] == prod_name:
                 ind = i
-        print("\n--------------------------------------------\n")
-        print("\nPress 1 to modify Product Code.")
-        print("\nPress 2 to modify Product Name.")
-        print("\nPress 3 to modify Available Stock.")
+        print("\n-------------------------------------------------\n")
+        print("\nPress 1 to modify Product Code")
+        print("\nPress 2 to modify Product Name")
+        print("\nPress 3 to modify Available Stock")
         print("\nPress 4 to modify Maximum Stock")
-        print("\nPress 5 to modify Cost Price.")
-        print("\nPress 6 for modifying Selling Price.\n")
-        print("\n--------------------------------------------\n")
+        print("\nPress 5 to modify Cost Price")
+        print("\nPress 6 to modify Selling Price\n")
+        print("\n-------------------------------------------------\n")
 
         option = int(input("\nEnter your Option : "))
         if option == 1:
