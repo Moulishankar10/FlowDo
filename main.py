@@ -103,6 +103,8 @@ class Biller:
         self.price=[]
         self.total_price=[]
         self.limit=l
+        self.ordered = False
+        self.item_selected = False
         
     def isFull(self):
         return len(self.prod_name) == self.limit
@@ -128,6 +130,7 @@ class Biller:
                             self.prod_name.append(ele.upper())
                             self.quantity.append(int(qn))
                             self.price.append(inv_data["Selling_Price"][i])
+                            self.item_selected = True
                             print("\n>>>>>>>> Product is Added to the Order <<<<<<<<\n")
                             break
                         else:
@@ -209,7 +212,7 @@ class Biller:
                 if rev_data["Product_Name"][i] == self.prod_name[j]:
                     rev_data[str(frmt)][i] += self.total_price[j]
         rev_data.to_csv('data/revenue.csv', index=False)
-
+        self.ordered = True
         print("\n\n\n -------- Updated the Inventory Data ! -------- \n")
 
 #INDIVIDUAL FUNCTIONS USED IN REVENUE SUB MENU
@@ -478,7 +481,15 @@ def Order():
                     break
 
             elif order_opt == 9:
-                break
+                if not b.item_selected or b.ordered:
+                    break
+                else:
+                    print("\n\n!!! You haven't confirmed the Order !!!")
+                    opt = input("\nAre you sure want to exit from the 'ORDER MENU'? (y/n) : ").lower()
+                    if opt:
+                        break
+                    else:
+                        continue
         
             
 # Revenue() - A FUNCTION WHICH PROVIDES ANY KIND OF INFORMATION REGARDING THE OWNER'S REVENUE.            
