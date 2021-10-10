@@ -159,7 +159,7 @@ class Biller:
     # FUNCTION TO DISPLAY CONTENTS OF THE BILL
     def display(self):
         if self.isEmpty():
-            print("\n!!!Sorry, It's an Empty Bill !!!\n")
+            print("\n!!! You haven't ordered any products yet to generate bill !!!\n")
         else:
             self.total_price = list(np.array(self.quantity)*np.array(self.price))
             
@@ -174,10 +174,11 @@ class Biller:
             print("\n=============================================================\n")
 
     # FUNCTION TO MODIFY A PRODUCT NAME OR QUANTITY IN THE BILL
-    def modify(self,ele):
+    def modify(self):
         if self.isEmpty():
-            print("\n!!! No Products are selected for the Order - Couldn't modify anything !!!\n")
+            print("\n!!! You haven't ordered any products yet to modify !!!\n")
         else:
+            ele = input("\nEnter the product name : ").upper()
             if ele in self.prod_name:
                 ind = self.prod_name.index(ele.upper())
                 key = int(input("\n                 Press 0 to modify the product name ..... \n\n                 Press 1 to modify the quantity .....\n\nYour Option : "))
@@ -445,8 +446,7 @@ def Order():
                     b.display()
             
             elif order_opt == 4:
-                ele = input("\nEnter the product name : ").upper()
-                b.modify(ele)
+                b.modify()
             
             elif order_opt == 5:
                 if b.isEmpty():
